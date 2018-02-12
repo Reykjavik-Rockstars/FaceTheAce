@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/HandScreen.unity
+- path: Assets/IP_LoginScreen.unity
   isLoaded: 1
   isActive: 1

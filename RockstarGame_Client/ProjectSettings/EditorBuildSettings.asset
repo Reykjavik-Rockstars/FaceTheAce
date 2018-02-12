@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/IP_LoginScreen.unity
+    guid: 2f531851023b6d54e8475ca6b8d77a6a
+  - enabled: 1
+    path: Assets/HandScreen.unity
+    guid: d45c8b50fad71f540b3efa50bb1d5e4c
