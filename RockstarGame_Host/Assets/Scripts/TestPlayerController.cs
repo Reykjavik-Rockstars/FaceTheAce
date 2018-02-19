@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class TestPlayerController : MonoBehaviour {
 
-   
-
    // Use this for initialization
    void Start () {
       
@@ -16,5 +14,9 @@ public class TestPlayerController : MonoBehaviour {
       float moveHorizontal = Input.GetAxis("Horizontal");
       float moveVertical = Input.GetAxis("Vertical");
       transform.Translate(new Vector3(0, moveVertical * 0.005f, 0), Space.World);
+      if (moveVertical > 0)
+      {
+
+      }
    }
 }
