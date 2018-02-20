@@ -54,8 +54,9 @@
      <Compile Include="Assets\GameIntroButton.cs" />
      <Compile Include="Assets\HostController.cs" />
      <Compile Include="Assets\PlayerList.cs" />
-     <Compile Include="Assets\Scripts\PlayingCard_TestMeshChanger.cs" />
-     <Compile Include="Assets\Scripts\TestPlayerController.cs" />
+     <Compile Include="Assets\Scripts\CardMeshController.cs" />
+     <Compile Include="Assets\Scripts\CardMeshControllerTestDriver.cs" />
+     <Compile Include="Assets\Scripts\WarGameManager.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
