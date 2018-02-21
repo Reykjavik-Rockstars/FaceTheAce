@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler {
+    
     // for possible future USE!!!
     // obviously replace enums with other types.
     // public enum Slot { WEAPON, HEAD, CHEST, LEGS, FEET, INVENTORY };

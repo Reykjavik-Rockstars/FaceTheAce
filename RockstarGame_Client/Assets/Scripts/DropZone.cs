@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
+
+[System.Serializable]
+public class CardEvent : UnityEvent { }
+
 public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler {
     // for possible future use!
     // public Draggable.Slot typeOfItem = Draggable.Slot.INVENTORY;
+
+    public CardEvent sendCard;
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -46,6 +53,10 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         if (d != null)
         {
             d.parentToReturnTo = this.transform;
+        }
+        else
+        {
+            sendCard.Invoke();
         }
     }
 }
