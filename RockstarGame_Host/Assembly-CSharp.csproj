@@ -51,6 +51,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\ActionDriver.cs" />
      <Compile Include="Assets\GameIntroButton.cs" />
      <Compile Include="Assets\HostController.cs" />
      <Compile Include="Assets\PlayerList.cs" />
