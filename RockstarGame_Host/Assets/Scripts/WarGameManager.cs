@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 [System.Serializable]
 public class CardChangeEvent : UnityEvent<GameObject, int> { }
@@ -12,6 +13,8 @@ public class WarGameManager : MonoBehaviour
 
     public CardChangeEvent changeP1CardMesh;
     public CardChangeEvent changeP2CardMesh;
+
+	public Text scoreText;
 
     //player scores will display on the inspector -kk
     public int p1Score = 0;
@@ -108,6 +111,7 @@ public class WarGameManager : MonoBehaviour
             //animate interactions (*WORK WITH MICHAEL*)
 
             //set state as idle
+			scoreText.text = "Player 1: " + p1Score + "      Player 2: " + p2Score;
             currentState = State.Idle;
         }
     }
