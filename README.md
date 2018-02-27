@@ -4,7 +4,7 @@ Our CS3398 project strives to create a networked mutli-platform card game applic
 
 Current Status: Networked proof-of-concept with draggable cards with scripts to listen for its drop functionality.
 
-======
+------
 
 Features:
   - War Game AI (Kevin Kim)
