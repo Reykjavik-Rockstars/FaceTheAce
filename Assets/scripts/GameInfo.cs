@@ -11,13 +11,16 @@ public class GameInfo
     public List<Player> Players;
     public List<Card> Deck;
 
+    public List<Card> unresolvedCards;
     public List<Effect> ActiveEffects;
 
     public GameInfo()
     {
+        singleton = this;
         Boss = new BossPlayer("Ace");
         Players = new List<Player>();
         ActiveEffects = new List<Effect>();
+        unresolvedCards = new List<Card>();
     }
 
     public bool ListPlayer(Player p)

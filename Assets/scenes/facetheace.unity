@@ -231,12 +231,12 @@ Prefab:
     - target: {fileID: 224920602054637498, guid: 9804ed3cbe4126b418ed6c2328728213,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 255
+      value: 654.5
       objectReference: {fileID: 0}
     - target: {fileID: 224920602054637498, guid: 9804ed3cbe4126b418ed6c2328728213,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -126
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224920602054637498, guid: 9804ed3cbe4126b418ed6c2328728213,
         type: 2}
@@ -1006,8 +1006,8 @@ MonoBehaviour:
     m_Right: 0
     m_Top: 0
     m_Bottom: 0
-  m_ChildAlignment: 0
-  m_Spacing: 0
+  m_ChildAlignment: 4
+  m_Spacing: 20
   m_ChildForceExpandWidth: 0
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -1160,6 +1160,61 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1609878352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1609878355}
+  - component: {fileID: 1609878354}
+  - component: {fileID: 1609878353}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1609878353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1609878352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5c466161e2a66942a151fbeee55d270, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NumPlayers: 0
+--- !u!114 &1609878354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1609878352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bbcebd492b39da41bca6ae6bb00f249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nextTurnButton: {fileID: 379715155}
+  currentState: 0
+--- !u!4 &1609878355
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1609878352}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -195.82193, y: -52.81143, z: -23.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1655872171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1575,12 +1630,12 @@ Prefab:
     - target: {fileID: 224754933255034006, guid: fde6659c36dfb82409b88134b10d9b1f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 85
+      value: 464.5
       objectReference: {fileID: 0}
     - target: {fileID: 224754933255034006, guid: fde6659c36dfb82409b88134b10d9b1f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -126
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224754933255034006, guid: fde6659c36dfb82409b88134b10d9b1f,
         type: 2}

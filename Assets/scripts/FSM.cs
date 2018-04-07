@@ -1,6 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public delegate void stateTransitionDel();
 
@@ -8,9 +7,16 @@ public class FSM : MonoBehaviour
 {
     public static FSM singleton;
 
+    public Button nextTurnButton;
+
     void Awake()
     {
         singleton = this;
+    }
+
+    private void Start()
+    {
+        enterFSM();
     }
 
     public enum gameState
@@ -37,13 +43,29 @@ public class FSM : MonoBehaviour
     public stateTransitionDel onBConfirmBegin;
     public stateTransitionDel onBConfirmEnd;
 
+    public void enterFSM()
+    {
+        nextTurnButton.onClick.RemoveAllListeners();
+        nextTurnButton.onClick.AddListener(drawToSelect);
+        //TODO: Set the button to be non-interactable here, tell card draw action to re-activate
+        //nextTurnButton.interactable = false;
+        currentState = gameState.Draw;
+        if (onDrawBegin != null)
+            onDrawBegin();
+    }
+
     public void drawToSelect()
     {
         if (onDrawEnd != null)
             onDrawEnd();
         //State Change Actions
+
+        //Set the Next Turn button non-interactable, change its listener to the next transition
+        nextTurnButton.onClick.RemoveAllListeners();
+        nextTurnButton.onClick.AddListener(selectToAction);
+        //TODO: Set the button to be non-interactable here, tell card drag action when to re-activate
+        //nextTurnButton.interactable = false;
         currentState = gameState.Select;
-        Debug.Log("game state changed to select");
         if (onSelectBegin != null)
             onSelectBegin();
     }
@@ -53,6 +75,15 @@ public class FSM : MonoBehaviour
         if (onSelectEnd != null)
             onSelectEnd();
         //State Change Actions
+        nextTurnButton.onClick.RemoveAllListeners();
+        if (GameInfo.singleton.unresolvedCards.Count <= 1)
+        {
+            nextTurnButton.onClick.AddListener(actionToConfirm);
+        }
+        else
+        {
+            nextTurnButton.onClick.AddListener(actionToAction);
+        }
         currentState = gameState.Action;
         if (onActionBegin != null)
             onActionBegin();
@@ -63,6 +94,15 @@ public class FSM : MonoBehaviour
         if (onActionEnd != null)
             onActionEnd();
         //State Change Actions
+        nextTurnButton.onClick.RemoveAllListeners();
+        if (GameInfo.singleton.unresolvedCards.Count <= 1)
+        {
+            nextTurnButton.onClick.AddListener(actionToConfirm);
+        }
+        else
+        {
+            nextTurnButton.onClick.AddListener(actionToAction);
+        }
         currentState = gameState.Action;
         if (onActionBegin != null)
             onActionBegin();
@@ -73,6 +113,8 @@ public class FSM : MonoBehaviour
         if (onActionEnd != null)
             onActionEnd();
         //State Change Actions
+        nextTurnButton.onClick.RemoveAllListeners();
+        nextTurnButton.onClick.AddListener(confirmToBDraw);
         currentState = gameState.Confirm;
         if (onConfirmBegin != null)
             onConfirmBegin();
@@ -83,6 +125,8 @@ public class FSM : MonoBehaviour
         if (onConfirmEnd != null)
             onConfirmEnd();
         //State Change Actions
+        nextTurnButton.onClick.RemoveAllListeners();
+        nextTurnButton.onClick.AddListener(bDrawToBSelect);
         currentState = gameState.BDraw;
         if (onBDrawBegin != null)
             onBDrawBegin();
@@ -93,6 +137,8 @@ public class FSM : MonoBehaviour
         if (onBDrawEnd != null)
             onBDrawEnd();
         //State Change Actions
+        nextTurnButton.onClick.RemoveAllListeners();
+        nextTurnButton.onClick.AddListener(bSelectToBAction);
         currentState = gameState.BSelect;
         if (onBSelectBegin != null)
             onBSelectBegin();
@@ -103,16 +149,57 @@ public class FSM : MonoBehaviour
         if (onBSelectEnd != null)
             onBSelectEnd();
         //State Change Actions
+        nextTurnButton.onClick.RemoveAllListeners();
+        if (GameInfo.singleton.unresolvedCards.Count <= 1)
+        {
+            nextTurnButton.onClick.AddListener(bActionToBConfirm);
+        }
+        else
+        {
+            nextTurnButton.onClick.AddListener(bActionToBAction);
+        }
         currentState = gameState.BAction;
         if (onBActionBegin != null)
             onBActionBegin();
     }
 
-    public void bActionToDraw()
+    public void bActionToBAction()
     {
         if (onBActionEnd != null)
             onBActionEnd();
         //State Change Actions
+        nextTurnButton.onClick.RemoveAllListeners();
+        if (GameInfo.singleton.unresolvedCards.Count <= 1)
+        {
+            nextTurnButton.onClick.AddListener(bActionToBConfirm);
+        }
+        else
+        {
+            nextTurnButton.onClick.AddListener(bActionToBAction);
+        }
+        if (onBActionBegin != null)
+            onBActionBegin();
+    }
+
+    public void bActionToBConfirm()
+    {
+        if (onBActionEnd != null)
+            onBActionEnd();
+        //State Change Actions
+        nextTurnButton.onClick.RemoveAllListeners();
+        nextTurnButton.onClick.AddListener(bConfirmToDraw);
+        currentState = gameState.BConfirm;
+        if (onBConfirmBegin != null)
+            onBConfirmBegin();
+    }
+
+    public void bConfirmToDraw()
+    {
+        if (onBActionEnd != null)
+            onBConfirmBegin();
+        //State Change Actions
+        nextTurnButton.onClick.RemoveAllListeners();
+        nextTurnButton.onClick.AddListener(drawToSelect);
         currentState = gameState.Draw;
         if (onDrawBegin != null)
             onDrawBegin();
