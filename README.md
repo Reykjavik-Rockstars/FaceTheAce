@@ -8,17 +8,16 @@ The game logic is handled by a finite state machine that iterates through game s
 
 Current Features
 ---
-⋅⋅* Game Logic (Tyler G. Hudson)
-⋅⋅* Card Draggability (Daniel Ortiz)
-⋅⋅* Card Dealing & Aesthetics (David Crowe)
-⋅⋅* End Game Scenes (Kevin Kim)
-⋅⋅* Card Functionality (Michael Lujan)
+* Game Logic (Tyler G. Hudson)
+* Card Draggability (Daniel Ortiz)
+* Card Dealing & Aesthetics (David Crowe)* End Game Scenes (Kevin Kim)
+* Card Functionality (Michael Lujan)
 
 
 Planned Features for Sprint 3
 ---
-⋅⋅* Functional networking
-⋅⋅* Improved card aesthetics
-⋅⋅* Diverse card functionalitiy (heal, nerf, lingering effects)
-⋅⋅* Main Menu
-⋅⋅* Classes (Fighter, Medic, Tank, etc.)
+* Functional networking
+* Improved card aesthetics
+* Diverse card functionalitiy (heal, nerf, lingering effects)
+* Main Menu (Sound Options & Class selection)
+* Classes (Fighter, Medic, Tank, etc.)
