@@ -26,9 +26,9 @@ public class FSM : MonoBehaviour
 
     public void activateCard()
     {
-        Card thisCard = GameInfo.singleton.unresolvedCards[0];
+        CardDisplay thisCard = GameInfo.singleton.unresolvedCards[0];
         GameInfo.singleton.unresolvedCards.RemoveAt(0);
-        thisCard.m_effect.Activate();
+        thisCard.effect.Activate();
     }
 
     public gameState currentState;

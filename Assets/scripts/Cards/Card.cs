@@ -6,15 +6,13 @@ public class Card : ScriptableObject
 
     public new string name;
     public string description;
-
-    public Effect m_effect;
-    public Effect GetEffect()
-    {
-        return m_effect;
-    }
-
     public Sprite artwork;
 
+    public Effect effect;
+    public Effect GetEffect()
+    {
+        return effect;
+    }
     // 0.0 rare - 1.0 common!
     public struct Rarity
     {

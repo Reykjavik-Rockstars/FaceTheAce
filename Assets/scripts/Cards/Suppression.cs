@@ -2,7 +2,12 @@
 {
     int countdown = 4;
     int turnCount = 2;
-
+    protected override void Awake()
+    {
+        base.Awake();
+        _description = "Target takes 2 damage for each of their next 4 actions. Expires in 2 turns.";
+        _name = "Suppression";
+    }
     public override void Activate()
     {
         base.Activate();
@@ -62,7 +67,7 @@
         //Called at the end of the target's opponent's selection step.
         //Check the unresolved cards list. For each one owned by the target, target takes
         //2 damage.
-        foreach (Card card in GameInfo.singleton.unresolvedCards)
+        foreach (CardDisplay card in GameInfo.singleton.unresolvedCards)
         {
             if (card.GetEffect().Targets[0] == _targets[0])
             {

@@ -1,8 +1,10 @@
-﻿public class openFire : Effect
+﻿public class OpenFire : Effect
 {
-    public openFire() : base()
+    protected override void Awake()
     {
+        base.Awake();
         _name = "Open Fire";
+        _description = "Deals 5 damage to target.";
     }
 
     public override void Activate()

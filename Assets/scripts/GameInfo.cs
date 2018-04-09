@@ -9,9 +9,9 @@ public class GameInfo
 
     public BossPlayer Boss;
     public List<Player> Players;
-    public List<Card> Deck;
+    public List<CardDisplay> Deck;
 
-    public List<Card> unresolvedCards;
+    public List<CardDisplay> unresolvedCards;
     public List<Effect> ActiveEffects;
 
     public GameInfo()
@@ -20,7 +20,7 @@ public class GameInfo
         Boss = new BossPlayer("Ace");
         Players = new List<Player>();
         ActiveEffects = new List<Effect>();
-        unresolvedCards = new List<Card>();
+        unresolvedCards = new List<CardDisplay>();
     }
 
     public bool ListPlayer(Player p)

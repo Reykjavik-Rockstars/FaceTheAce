@@ -1,14 +1,19 @@
-﻿public class DodgeRoll : Effect
+﻿using UnityEditor;
+using UnityEngine;
+using System.Collections;
+
+public class DodgeRoll : Effect
 {
-    public DodgeRoll() : base()
+    protected override void Awake()
     {
+        base.Awake();
+        _description = "Negates damage from 1 “Open Fire” or “Sweeping Fire” card targeting target next turn.";
         _name = "Dodge Roll";
     }
 
     public override void Activate()
     {
         base.Activate();
-
         //Checks if the card is targeting the boss.
         if (_targets[0] == GameInfo.singleton.Boss)
         {
@@ -46,7 +51,7 @@
         //Called at the end of the target's opponent's selection step.
         //Check the unresolved cards list. If there is one called "Open Fire"
         //or "Sweeping Fire", remove it and inactivate this effect.
-        foreach (Card card in GameInfo.singleton.unresolvedCards)
+        foreach (CardDisplay card in GameInfo.singleton.unresolvedCards)
         {
             if (card.name == "Open Fire" || card.name == "Sweeping Fire")
             {

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
-
-public abstract class Effect
+using UnityEngine;
+using UnityEngine.UI;
+public abstract class Effect : MonoBehaviour
 {
     protected List<Player> _targets;
     public List<Player> Targets {
@@ -15,11 +16,22 @@ public abstract class Effect
     }
 
     protected string _name;
-    public string Name {
-        get{ return _name; }
+    public string getName {
+        get { return _name; }
     }
 
-    public Effect()
+    protected string _description;
+    public string getDescription
+    {
+        get { return _description; }
+    }
+
+    protected Sprite _artwork;
+    public Sprite getArt
+    {
+        get { return _artwork; }
+    }
+    protected virtual void Awake()
     {
         _targets = new List<Player>();
     }
