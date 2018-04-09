@@ -70,7 +70,10 @@ public class FSM : MonoBehaviour
         //Set the Next Turn button non-interactable, change its listener to the next transition
         nextTurnButton.onClick.RemoveAllListeners();
         nextTurnButton.onClick.AddListener(selectToAction);
+<<<<<<< HEAD
         //TODO: Set the button to be non-interactable here, tell card drag action when to re-activate
+=======
+>>>>>>> 5e26fddb6f421e003e08567d448f8ae72cfa9552
         nextTurnButton.interactable = false;
         currentState = gameState.Select;
         if (onSelectBegin != null)
