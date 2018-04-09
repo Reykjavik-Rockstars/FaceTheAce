@@ -4,13 +4,13 @@
     {
         base.Awake();
         _name = "Sidewinder";
-        _description = "Deals 5 damage to target. (uncommon, cannot be negated).";
+        _description = "Deals 75 damage to target. (uncommon, cannot be negated).";
     }
 
     public override void Activate()
     {
         base.Activate();
-        _targets[0].ReceiveDamage(5, _owner);
+        _targets[0].ReceiveDamage(75, _owner);
         Inactivate();
     }
 }

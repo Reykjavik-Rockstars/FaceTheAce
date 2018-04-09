@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class GameInfo
 {
@@ -9,13 +10,15 @@ public class GameInfo
 
     public BossPlayer Boss;
     public List<Player> Players;
-    public List<CardDisplay> Deck;
-
+    //public List<CardDisplay> Deck;
     public List<CardDisplay> unresolvedCards;
     public List<Effect> ActiveEffects;
+    
+    public Player CurrentPlayer;
 
     public GameInfo()
     {
+        Debug.Log("GameInfo being created...");
         singleton = this;
         Boss = new BossPlayer("Ace");
         Players = new List<Player>();
@@ -25,9 +28,14 @@ public class GameInfo
 
     public bool ListPlayer(Player p)
     {
-        if (playerCount == MAX_PLAYERS) return false;
+        if (playerCount == MAX_PLAYERS)
+        {
+            Debug.Log("New player not added!");
+            return false;
+        }
         else
         {
+            Debug.Log("New player added!");
             Players.Add(p);
             return true;
         }

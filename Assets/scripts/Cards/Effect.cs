@@ -50,4 +50,11 @@ public abstract class Effect : MonoBehaviour
     {
         _targets = selection;
     }
+    public virtual void SetTarget(Player player)
+    {
+        if (_targets == null)
+            _targets = new List<Player>();
+        _targets.Clear();
+        _targets.Add(player);
+    }
 };

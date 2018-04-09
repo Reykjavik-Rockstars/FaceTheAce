@@ -4,7 +4,6 @@ using UnityEngine.EventSystems;
 
 public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         //Debug.Log("OnPointerEnter");
@@ -38,9 +37,11 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         if (d != null)
         {
-            if (this.transform.childCount < 2)
+            if (this.transform.childCount < 2) {
                 d.parentToReturnTo = this.transform;
+                GameInfo.singleton.CurrentPlayer.HasPlayedCard = true;
+                GameController.singleton.UpdateUI();
+            }
         }
-
     }
 }

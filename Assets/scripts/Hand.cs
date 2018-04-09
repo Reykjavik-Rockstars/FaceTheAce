@@ -2,34 +2,52 @@
 
 public class Hand
 {
-    readonly int MAX_HAND_CARD_COUNT;
-    private List<Card> m_hand;
+    int m_MaxCardCount;
+    private List<CardDisplay> m_Hand;
 
     public Hand(int maxCardCount)
     {
-        MAX_HAND_CARD_COUNT = maxCardCount;
+        m_MaxCardCount = maxCardCount;
+        m_Hand = new List<CardDisplay>();
     }
 
-    public void AddCard(Card card)
+    public void AddCard(CardDisplay card)
     {
-        if (m_hand.Count < MAX_HAND_CARD_COUNT)
+        if (m_Hand.Count < m_MaxCardCount)
         {
-            m_hand.Add(card);
+            m_Hand.Add(card);
         }
     }
 
-    public void AddCardFromDeck(List<Card> deck)
+    public void RemoveCard(CardDisplay card)
     {
-        if (deck.Count != 0 && m_hand.Count < MAX_HAND_CARD_COUNT)
-        {
-            m_hand.Add(deck[0]);
-            deck.RemoveAt(0);
-        }
+        m_Hand.Remove(card);
     }
 
-    public List<Card> GetCards()
+    /* May be put to use later
+        public void AddCardFromDeck(List<CardDisplay> deck)
+        {
+            if (deck.Count != 0 && m_Hand.Count < m_MaxCardCount)
+            {
+                m_Hand.Add(deck[0]);
+                deck.RemoveAt(0);
+            }
+        }
+    */
+
+    public List<CardDisplay> GetCards()
     {
-        return m_hand;
+        return m_Hand;
+    }
+
+    public int GetHeldCardsCount()
+    {
+        return m_Hand.Count;
+    }
+
+    public int GetMaxCardsCount()
+    {
+        return m_MaxCardCount;
     }
 
 };

@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player
 {
     public string Username;
     public int Health;
     public Hand Hand;
     //on start, player is not dead. Only dead once hp falls to 0 or less
     public bool isDead = false;
+
+    public bool HasPlayedCard = false;
 
     public Del_Int OnDamaged;
     public virtual void ReceiveDamage(int damage, Player source)

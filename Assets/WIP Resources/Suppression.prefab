@@ -236,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
   placeholderParent: {fileID: 0}
+  dragOffset: {x: 0, y: 0}
 --- !u!114 &114403771437348070
 MonoBehaviour:
   m_ObjectHideFlags: 1
