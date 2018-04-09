@@ -24,6 +24,7 @@ MonoBehaviour:
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   controlID: 4326
 =======
 <<<<<<< HEAD
@@ -32,6 +33,9 @@ MonoBehaviour:
   controlID: 3223
 >>>>>>> 6da3b2d42a25f27da30aa4b2566170b935fdfcc8
 >>>>>>> 5e26fddb6f421e003e08567d448f8ae72cfa9552
+=======
+  controlID: 1002
+>>>>>>> parent of d3f1944... Merge branch 'development' of https://github.com/Reykjavik-Rockstars/RockstarGame into development
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,12 +173,14 @@ MonoBehaviour:
   m_MinSize: {x: 436, y: 492}
   m_MaxSize: {x: 14006, y: 14042}
   vertical: 1
-<<<<<<< HEAD
   controlID: 1003
+<<<<<<< HEAD
 =======
   controlID: 3224
 >>>>>>> 6da3b2d42a25f27da30aa4b2566170b935fdfcc8
 >>>>>>> 5e26fddb6f421e003e08567d448f8ae72cfa9552
+=======
+>>>>>>> parent of d3f1944... Merge branch 'development' of https://github.com/Reykjavik-Rockstars/RockstarGame into development
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -206,12 +212,14 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-<<<<<<< HEAD
   controlID: 819
+<<<<<<< HEAD
 =======
   controlID: 3083
 >>>>>>> 6da3b2d42a25f27da30aa4b2566170b935fdfcc8
 >>>>>>> 5e26fddb6f421e003e08567d448f8ae72cfa9552
+=======
+>>>>>>> parent of d3f1944... Merge branch 'development' of https://github.com/Reykjavik-Rockstars/RockstarGame into development
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -283,6 +291,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_Position:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: {x: -46.93082, y: 3.3410416, z: 83.33159}
     speed: 2
     m_Value: {x: -46.93082, y: 3.3410416, z: 83.33159}
@@ -297,6 +306,11 @@ MonoBehaviour:
     m_Value: {x: -354.67014, y: -31.312687, z: 81.5}
 >>>>>>> 6da3b2d42a25f27da30aa4b2566170b935fdfcc8
 >>>>>>> 5e26fddb6f421e003e08567d448f8ae72cfa9552
+=======
+    m_Target: {x: -80.66282, y: 48.211895, z: 90}
+    speed: 2
+    m_Value: {x: -80.66282, y: 48.211895, z: 90}
+>>>>>>> parent of d3f1944... Merge branch 'development' of https://github.com/Reykjavik-Rockstars/RockstarGame into development
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -325,6 +339,7 @@ MonoBehaviour:
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_Target: 1320.529
     speed: 2
     m_Value: 1320.529
@@ -339,6 +354,11 @@ MonoBehaviour:
     m_Value: 1530.694
 >>>>>>> 6da3b2d42a25f27da30aa4b2566170b935fdfcc8
 >>>>>>> 5e26fddb6f421e003e08567d448f8ae72cfa9552
+=======
+    m_Target: 1737.1903
+    speed: 2
+    m_Value: 1737.1903
+>>>>>>> parent of d3f1944... Merge branch 'development' of https://github.com/Reykjavik-Rockstars/RockstarGame into development
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -476,16 +496,18 @@ MonoBehaviour:
   m_PersistentViewDataDictionary: {fileID: 0}
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD
     m_SelectedIDs: de2a0000
     m_LastClickedID: 10974
     m_ExpandedIDs: ecf9ffff000000003c2b0000
+<<<<<<< HEAD
 =======
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: aaebffff9efbffff00000000ec290000f8290000
 >>>>>>> 6da3b2d42a25f27da30aa4b2566170b935fdfcc8
 >>>>>>> 5e26fddb6f421e003e08567d448f8ae72cfa9552
+=======
+>>>>>>> parent of d3f1944... Merge branch 'development' of https://github.com/Reykjavik-Rockstars/RockstarGame into development
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -540,12 +562,14 @@ MonoBehaviour:
   m_MinSize: {x: 436, y: 271}
   m_MaxSize: {x: 14006, y: 10021}
   vertical: 0
-<<<<<<< HEAD
   controlID: 1004
+<<<<<<< HEAD
 =======
   controlID: 3225
 >>>>>>> 6da3b2d42a25f27da30aa4b2566170b935fdfcc8
 >>>>>>> 5e26fddb6f421e003e08567d448f8ae72cfa9552
+=======
+>>>>>>> parent of d3f1944... Merge branch 'development' of https://github.com/Reykjavik-Rockstars/RockstarGame into development
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -655,6 +679,7 @@ MonoBehaviour:
     m_SearchArea: 0
     m_Folders:
 <<<<<<< HEAD
+<<<<<<< HEAD
     - Assets
   m_ViewMode: 1
   m_StartGridSize: 16
@@ -670,25 +695,30 @@ MonoBehaviour:
     m_ExpandedIDs: 00000000ba290000fc290000102a000000ca9a3bffffff7f
 =======
     - Assets/Resources/Cards
+=======
+    - Assets/scripts
+>>>>>>> parent of d3f1944... Merge branch 'development' of https://github.com/Reykjavik-Rockstars/RockstarGame into development
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Resources/Cards
+  - Assets/scripts
   m_LastFoldersGridSize: 16
   m_LastProjectPath: F:\Work\Classwork\2018 Spring\Software Engineering\RockstarGame\RockstarGame
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-<<<<<<< HEAD
     m_SelectedIDs: 94290000
     m_LastClickedID: 10644
     m_ExpandedIDs: 000000005229000000ca9a3bffffff7f
+<<<<<<< HEAD
 =======
     m_SelectedIDs: 46290000
     m_LastClickedID: 10566
     m_ExpandedIDs: 00000000b6270000fe2700001628000000ca9a3bffffff7f
 >>>>>>> 6da3b2d42a25f27da30aa4b2566170b935fdfcc8
 >>>>>>> 5e26fddb6f421e003e08567d448f8ae72cfa9552
+=======
+>>>>>>> parent of d3f1944... Merge branch 'development' of https://github.com/Reykjavik-Rockstars/RockstarGame into development
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: cards
@@ -717,6 +747,7 @@ MonoBehaviour:
     m_SelectedIDs: 
     m_LastClickedID: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000ba290000fc290000102a000000ca9a3bffffff7f
 =======
 <<<<<<< HEAD
@@ -725,6 +756,9 @@ MonoBehaviour:
     m_ExpandedIDs: 00000000b6270000fe2700001628000000ca9a3bffffff7f
 >>>>>>> 6da3b2d42a25f27da30aa4b2566170b935fdfcc8
 >>>>>>> 5e26fddb6f421e003e08567d448f8ae72cfa9552
+=======
+    m_ExpandedIDs: 000000005229000000ca9a3bffffff7f
+>>>>>>> parent of d3f1944... Merge branch 'development' of https://github.com/Reykjavik-Rockstars/RockstarGame into development
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -750,20 +784,18 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_SelectedInstanceIDs: aa2c0000
     m_LastClickedInstanceID: 11434
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c62300008629000018280000cc28000020290000662e0000a229000000000000
 =======
 <<<<<<< HEAD
+=======
+>>>>>>> parent of d3f1944... Merge branch 'development' of https://github.com/Reykjavik-Rockstars/RockstarGame into development
     m_SelectedInstanceIDs: de2a0000
     m_LastClickedInstanceID: 10974
     m_HadKeyboardFocusLastEvent: 0
-=======
-    m_SelectedInstanceIDs: 
-    m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
->>>>>>> 6da3b2d42a25f27da30aa4b2566170b935fdfcc8
     m_ExpandedInstanceIDs: c62300008629000018280000cc2800002029000000000000662e0000a2290000
 >>>>>>> 5e26fddb6f421e003e08567d448f8ae72cfa9552
     m_RenameOverlay:
@@ -814,9 +846,14 @@ MonoBehaviour:
 =======
     width: 550
     height: 947
+<<<<<<< HEAD
 >>>>>>> 5e26fddb6f421e003e08567d448f8ae72cfa9552
   m_MinSize: {x: 275, y: 50}
   m_MaxSize: {x: 4000, y: 4000}
+=======
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
+>>>>>>> parent of d3f1944... Merge branch 'development' of https://github.com/Reykjavik-Rockstars/RockstarGame into development
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
