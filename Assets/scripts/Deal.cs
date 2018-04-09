@@ -18,10 +18,11 @@ public class Deal : MonoBehaviour, IPointerClickHandler
         System.Random r = new System.Random();
         int rInt = r.Next(0, cards.Length);
 
-        if (GameObject.FindWithTag("Hand").transform.childCount < 5)
+        if (GameObject.FindWithTag("Hand").transform.childCount < 5 && FSM.singleton.currentState == FSM.gameState.Draw)
         {
             GameObject newCard = Instantiate(cards[rInt]) as GameObject;
             newCard.transform.SetParent(GameObject.FindWithTag("Hand").transform);
+            if (GameObject.FindWithTag("Hand").transform.childCount == 5) FSM.singleton.nextTurnButton.interactable = true;
         }
     }
 

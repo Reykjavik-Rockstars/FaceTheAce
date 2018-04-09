@@ -9,14 +9,14 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public Transform parentToReturnTo = null;
     public Transform placeholderParent = null;
     public Vector2 dragOffset = new Vector2(0f, 0f);
-
+    
     GameObject placeholder = null;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
         Debug.Log("OnBeginDrag");
         dragOffset = eventData.position - (Vector2)this.transform.position;
-
+        //this.gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true;    <--------  NEED THIS SOMEWHERE!!!!!!!
         placeholder = new GameObject();
         Debug.Log("placeholder created");
         placeholder.transform.SetParent(this.transform.parent);
