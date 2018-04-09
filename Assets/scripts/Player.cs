@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+
 public class Player : MonoBehaviour
 {
     public string Username;
@@ -6,12 +7,14 @@ public class Player : MonoBehaviour
     public Hand Hand;
     //on start, player is not dead. Only dead once hp falls to 0 or less
     public bool isDead = false;
+
     public Del_Int OnDamaged;
-    public void ReceiveDamage(int damage, Player source)
+    public virtual void ReceiveDamage(int damage, Player source)
     {
         if (OnDamaged != null) OnDamaged(damage);
+
         //only receive damage if player is alive
-        if (!isDead)
+        if(!isDead)
         {
             //if damage is less than player health, deal normal damage
             if (Health > 0 && Health >= damage)
@@ -27,16 +30,17 @@ public class Player : MonoBehaviour
                 Health = 0;
         }
     }
+
     public Del_Int OnHealed;
-    public void ReceiveHeal(int heal, Player source)
+    public virtual void ReceiveHeal(int heal, Player source)
     {
         if (OnHealed != null) OnHealed(heal);
-
+        
         //only heal if player is alive
-        if (!isDead)
+        if(!isDead)
         {
             //add health normally if health is normal
-            if (Health >= 0)
+            if(Health >= 0)
             {
                 Health = Health + heal;
             }
@@ -48,12 +52,14 @@ public class Player : MonoBehaviour
             }
         }
     }
+
     public Del_Void OnDeath;
-    void Die()
+    public virtual void Die()
     {
         if (OnDeath != null) OnDeath();
         isDead = true;
     }
+
     public Del_ListCard OnCardDraw;
     public Del_Card OnSelect;
     public Del_Player_Card OnTarget;

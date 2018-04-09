@@ -24,6 +24,13 @@ public class FSM : MonoBehaviour
         Draw, Select, Action, Confirm, BDraw, BSelect, BAction, BConfirm
     }
 
+    public void activateCard()
+    {
+        Card thisCard = GameInfo.singleton.unresolvedCards[0];
+        GameInfo.singleton.unresolvedCards.RemoveAt(0);
+        thisCard.m_effect.Activate();
+    }
+
     public gameState currentState;
 
     public stateTransitionDel onDrawBegin;
@@ -87,6 +94,8 @@ public class FSM : MonoBehaviour
         currentState = gameState.Action;
         if (onActionBegin != null)
             onActionBegin();
+        if (GameInfo.singleton.unresolvedCards.Count >= 1)
+            activateCard();
     }
 
     public void actionToAction()
@@ -106,6 +115,8 @@ public class FSM : MonoBehaviour
         currentState = gameState.Action;
         if (onActionBegin != null)
             onActionBegin();
+        if (GameInfo.singleton.unresolvedCards.Count >= 1)
+            activateCard();
     }
 
     public void actionToConfirm()
@@ -161,6 +172,8 @@ public class FSM : MonoBehaviour
         currentState = gameState.BAction;
         if (onBActionBegin != null)
             onBActionBegin();
+        if (GameInfo.singleton.unresolvedCards.Count >= 1)
+            activateCard();
     }
 
     public void bActionToBAction()
@@ -179,6 +192,8 @@ public class FSM : MonoBehaviour
         }
         if (onBActionBegin != null)
             onBActionBegin();
+        if (GameInfo.singleton.unresolvedCards.Count >= 1)
+            activateCard();
     }
 
     public void bActionToBConfirm()
