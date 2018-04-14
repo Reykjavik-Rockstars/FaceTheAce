@@ -731,12 +731,12 @@ Prefab:
     - target: {fileID: 224705286373673660, guid: bf056af6bfc4c0d409e3019b2b622d43,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 559.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224705286373673660, guid: bf056af6bfc4c0d409e3019b2b622d43,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -122.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224705286373673660, guid: bf056af6bfc4c0d409e3019b2b622d43,
         type: 2}
@@ -756,7 +756,7 @@ Prefab:
     - target: {fileID: 224705286373673660, guid: bf056af6bfc4c0d409e3019b2b622d43,
         type: 2}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224705286373673660, guid: bf056af6bfc4c0d409e3019b2b622d43,
         type: 2}
@@ -766,7 +766,7 @@ Prefab:
     - target: {fileID: 224705286373673660, guid: bf056af6bfc4c0d409e3019b2b622d43,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224705286373673660, guid: bf056af6bfc4c0d409e3019b2b622d43,
         type: 2}
@@ -777,16 +777,6 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 225867330682498180, guid: bf056af6bfc4c0d409e3019b2b622d43,
-        type: 2}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 225867330682498180, guid: bf056af6bfc4c0d409e3019b2b622d43,
-        type: 2}
-      propertyPath: m_BlocksRaycasts
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bf056af6bfc4c0d409e3019b2b622d43, type: 2}
