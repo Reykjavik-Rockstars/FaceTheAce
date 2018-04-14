@@ -11,11 +11,11 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         singleton = this;
-        m_game = new GameInfo();
+        gameObject.AddComponent<GameInfo>();
     }
 
     public bool AddPlayer(string nickname)
     {
-        return m_game.ListPlayer(new ActivePlayer(nickname));
+        return m_game.ListPlayer(nickname);
     }
 }

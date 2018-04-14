@@ -50,4 +50,17 @@ public abstract class Effect : MonoBehaviour
     {
         _targets = selection;
     }
+
+    public virtual void SetTarget(Player selection)
+    {
+        List<Player> TargetList = new List<Player>();
+        TargetList.Add(selection);
+        _targets = TargetList;
+    }
+
+    public virtual void RemoveTarget(Player selection)
+    {
+        if (_targets.Contains(selection))
+            _targets.Remove(selection);
+    }
 };
