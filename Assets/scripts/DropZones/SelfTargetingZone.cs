@@ -1,6 +1,6 @@
 ﻿public class SelfTargetingZone : TargetingZone
 {
-    protected override void Start()
+    protected override void Awake()
     {
         GameInfo.singleton.selfTargetZone = this;
     }

@@ -70,8 +70,11 @@ public class FSM : MonoBehaviour
         //Set the Next Turn button non-interactable, change its listener to the next transition
         nextTurnButton.onClick.RemoveAllListeners();
         nextTurnButton.onClick.AddListener(selectToAction);
+
         //TODO: Set the button to be non-interactable here, tell card drag action when to re-activate
         nextTurnButton.interactable = false;
+        HandDropZone.singleton.SetCardsBlockRaycast(true);
+
         currentState = gameState.Select;
         if (onSelectBegin != null)
             onSelectBegin();
@@ -91,6 +94,12 @@ public class FSM : MonoBehaviour
         {
             nextTurnButton.onClick.AddListener(actionToAction);
         }
+
+        GameInfo.singleton.HideField();
+
+        activateCard();
+        HandDropZone.singleton.SetCardsBlockRaycast(false);
+
         currentState = gameState.Action;
         if (onActionBegin != null)
             onActionBegin();
@@ -102,7 +111,6 @@ public class FSM : MonoBehaviour
     {
         if (onActionEnd != null)
             onActionEnd();
-        //State Change Actions
         nextTurnButton.onClick.RemoveAllListeners();
         if (GameInfo.singleton.unresolvedCards.Count <= 1)
         {
@@ -112,6 +120,9 @@ public class FSM : MonoBehaviour
         {
             nextTurnButton.onClick.AddListener(actionToAction);
         }
+
+        activateCard();
+
         currentState = gameState.Action;
         if (onActionBegin != null)
             onActionBegin();
@@ -126,6 +137,9 @@ public class FSM : MonoBehaviour
         //State Change Actions
         nextTurnButton.onClick.RemoveAllListeners();
         nextTurnButton.onClick.AddListener(confirmToBDraw);
+
+        GameInfo.singleton.ClearField();
+
         currentState = gameState.Confirm;
         if (onConfirmBegin != null)
             onConfirmBegin();

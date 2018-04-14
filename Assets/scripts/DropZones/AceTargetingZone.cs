@@ -1,6 +1,6 @@
 ﻿public class AceTargetingZone : TargetingZone
 {
-    protected override void Start()
+    protected override void Awake()
     {
         GameInfo.singleton.aceTargetZone = this;
     }

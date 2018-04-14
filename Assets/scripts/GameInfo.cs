@@ -64,4 +64,49 @@ public class GameInfo : MonoBehaviour
             return true;
         }
     }
+
+    public void ClearField()
+    {
+        foreach (Transform child in aceTargetZone.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (Transform child in selfTargetZone.transform)
+        {
+            Destroy(child.gameObject);
+        }
+        foreach (TargetingZone targetZone in playerTargetZones)
+        {
+            foreach (Transform child in targetZone.transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+    }
+
+    public void HideField()
+    {
+        CanvasGroup group;
+        foreach (Transform child in aceTargetZone.transform)
+        {
+            group = child.gameObject.GetComponent<CanvasGroup>();
+            group.alpha = 0f;
+            group.blocksRaycasts = false;
+        }
+        foreach (Transform child in selfTargetZone.transform)
+        {
+            group = child.gameObject.GetComponent<CanvasGroup>();
+            group.alpha = 0f;
+            group.blocksRaycasts = false;
+        }
+        foreach (TargetingZone targetZone in playerTargetZones)
+        {
+            foreach (Transform child in targetZone.transform)
+            {
+                group = child.gameObject.GetComponent<CanvasGroup>();
+                group.alpha = 0f;
+                group.blocksRaycasts = false;
+            }
+        }
+    }
 };

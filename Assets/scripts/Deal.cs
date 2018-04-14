@@ -21,6 +21,9 @@ public class Deal : MonoBehaviour, IPointerClickHandler
         if (GameObject.FindWithTag("Hand").transform.childCount < 5 && FSM.singleton.currentState == FSM.gameState.Draw)
         {
             GameObject newCard = Instantiate(cards[rInt]) as GameObject;
+            newCard.GetComponent<CanvasGroup>().blocksRaycasts = false;
+            CardDisplay cardDisplay = newCard.GetComponent<CardDisplay>();
+            HandDropZone.singleton.AddCard(cardDisplay);
             newCard.transform.SetParent(GameObject.FindWithTag("Hand").transform);
             if (GameObject.FindWithTag("Hand").transform.childCount == 5) FSM.singleton.nextTurnButton.interactable = true;
         }
