@@ -1,13 +1,39 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Networking;
+using System;
 
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
+
+    bool flag = true;
+
     public string Username;
     public int Health;
     public Hand Hand;
     //on start, player is not dead. Only dead once hp falls to 0 or less
     public bool isDead = false;
 
+    public int player_id = -1;
+
+    void Start()
+    {
+
+    }
+
+    private void Update()
+    {
+        showMessage();
+    }
+
+    void showMessage()
+    {
+        if (flag)
+        {
+            //infoDisplay.GetComponent<Text>().text += "nice";
+            flag = false;
+        }
+    }
     public Del_Int OnDamaged;
     public virtual void ReceiveDamage(int damage, Player source)
     {
