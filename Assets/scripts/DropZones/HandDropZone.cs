@@ -1,21 +1,25 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class HandDropZone : DropZone {
+public class HandDropZone : DropZone
+{
 
     public static HandDropZone singleton;
-    public List<CardDisplay> cards;
-    Hand hand;
+    public Hand hand;
 
     protected void Awake()
     {
         singleton = this;
-        cards = new List<CardDisplay>();
+    }
+    void Update()
+    {
+        if (hand == null)
+            hand = GameInfo.singleton.self.Hand;
     }
 
     protected override void DroppedEvent(Draggable d)
     {
-        if (this.transform.childCount < 6)
+        if (this.transform.childCount <= hand.GetMaxHandCardsCount())
         {
             d.parentToReturnTo = this.transform;
         }
@@ -39,21 +43,17 @@ public class HandDropZone : DropZone {
 
     public void AddCard(CardDisplay d)
     {
-        if (!cards.Contains(d))
-            cards.Add(d);
-        Debug.Log("card added");
+        hand.AddCard(d);
     }
 
     public void RemoveCard(CardDisplay d)
     {
-        if (cards.Contains(d))
-            cards.Remove(d);
-        Debug.Log("card removed");
+        hand.RemoveCard(d);
     }
 
     public void SetCardsBlockRaycast(bool block)
     {
-        foreach (CardDisplay card in cards)
+        foreach (CardDisplay card in hand.GetCards())
         {
             card.gameObject.GetComponent<CanvasGroup>().blocksRaycasts = block;
         }

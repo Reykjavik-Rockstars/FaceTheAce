@@ -6,6 +6,20 @@ TagManager:
   tags:
   - Hand
   - playArea
+  - p1_health_text
+  - p2_health_text
+  - p3_health_text
+  - p4_health_text
+  - p5_health_text
+  - ace_health_text
+  - current_game_state_text
+  - p1_name_text
+  - p2_name_text
+  - p3_name_text
+  - p4_name_text
+  - p5_name_text
+  - instructions_text
+  - card
   layers:
   - Default
   - TransparentFX

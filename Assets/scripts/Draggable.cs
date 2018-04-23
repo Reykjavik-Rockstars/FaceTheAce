@@ -9,13 +9,14 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     public Transform parentToReturnTo = null;
     public Transform placeholderParent = null;
     public Vector2 dragOffset = new Vector2(0f, 0f);
-    
+
     GameObject placeholder = null;
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        //Debug.Log("OnBeginDrag");
+        Debug.Log("OnBeginDrag");
         dragOffset = eventData.position - (Vector2)this.transform.position;
+
         //this.gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true;    <--------  NEED THIS SOMEWHERE!!!!!!!
         placeholder = new GameObject();
         //Debug.Log("placeholder created");
@@ -64,12 +65,29 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
     }
 
+    // OnEndDrag occurs after OnDrop (in DropZone)
     public void OnEndDrag(PointerEventData eventData)
     {
-        //Debug.Log("OnEndDrag");
+        Debug.Log("OnEndDrag");
+
         this.transform.SetParent(parentToReturnTo);
+        this.transform.position = parentToReturnTo.transform.position;
+
         this.transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
-        GetComponent<CanvasGroup>().blocksRaycasts = true;
+
+        GetComponent<CanvasGroup>().blocksRaycasts = false;
+
+        var zone = this.transform.parent.name.ToString();
+        Debug.Log("OnEndDrag for zone " + zone + "...");
+        if (zone == "Ace" ||
+            zone == "self_target_zone")
+        {
+            FSM.singleton.cardHasBeenPlayedDuringSelectGameState = true;
+        }
+        else
+        {
+
+        }
 
         Destroy(placeholder);
     }
