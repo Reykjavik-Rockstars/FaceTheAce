@@ -5,8 +5,9 @@
     protected override void Awake()
     {
         base.Awake();
-        _description = "Target takes 2 damage for each of their next 4 actions. Expires in 2 turns.";
+        _description = "Target takes 4 damage for each of their next 4 actions. Expires in 2 turns.";
         _name = "Suppression";
+        _rarity = (int)Rarity.rare;
     }
     public override void Activate()
     {
@@ -72,7 +73,7 @@
             if (card.GetEffect().Targets[0] == _targets[0])
             {
                 if (Countdown())
-                    _targets[0].ReceiveDamage(2, _owner);
+                    _targets[0].ReceiveDamage(4, _owner);
             }
         }
     }

@@ -11,7 +11,10 @@ namespace Prototype.NetworkLobby
     //Any LobbyHook can then grab it and pass those value to the game player prefab (see the Pong Example in the Samples Scenes)
     public class LobbyPlayer : NetworkLobbyPlayer
     {
-        static Color[] Colors = new Color[] { Color.magenta, Color.red, Color.cyan, Color.blue, Color.green, Color.yellow };
+        static Color[] Colors = new Color[] { Color.black, Color.red, Color.cyan, Color.blue, Color.green, Color.yellow };
+
+        // static Color[] Colors = new Color[] { new Color32(41, 127, 219, 1), new Color32(219, 41, 41, 1), new Color32(83, 29, 231, 1),
+        // new Color32(30, 92, 10, 1), new Color(18, 122, 171, 1) };
         //used on server to avoid assigning the same color to two player
         static List<int> _colorInUse = new List<int>();
 

@@ -194,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
   placeholderParent: {fileID: 0}
+  dragOffset: {x: 0, y: 0}
 --- !u!114 &114549440425104632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -232,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.10786115, g: 0.10828062, b: 0.1102941, a: 1}
+  m_Color: {r: 0.2910675, g: 0.8455882, b: 0.18652679, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
