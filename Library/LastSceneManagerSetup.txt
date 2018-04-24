@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/scenes/facetheace.unity
+- path: assets/scenes/facetheace.unity
   isLoaded: 1
   isActive: 1
