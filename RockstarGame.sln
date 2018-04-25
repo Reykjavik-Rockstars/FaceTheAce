@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockstarGame", "Assembly-CSharp.csproj", "{B04FEBEF-3F83-B0AA-F619-FB7BEF86D9B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RockstarGame", "Assembly-CSharp-Editor.csproj", "{306C9686-8C9B-0FA2-DA16-038AC2562FDF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{B04FEBEF-3F83-B0AA-F619-FB7BEF86D9B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B04FEBEF-3F83-B0AA-F619-FB7BEF86D9B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B04FEBEF-3F83-B0AA-F619-FB7BEF86D9B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{306C9686-8C9B-0FA2-DA16-038AC2562FDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{306C9686-8C9B-0FA2-DA16-038AC2562FDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{306C9686-8C9B-0FA2-DA16-038AC2562FDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{306C9686-8C9B-0FA2-DA16-038AC2562FDF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

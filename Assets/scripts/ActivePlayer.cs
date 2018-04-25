@@ -5,8 +5,8 @@ using System;
 
 public class ActivePlayer : Player
 {
-    const int MAX_HAND_CARD_COUNT = 3;
-    const int BASE_HEALTH = 50;
+    public const int MAX_HAND_CARD_COUNT = 3;
+    public const int BASE_HEALTH = 50;
     GameObject player_username_display;
     GameObject player_health_display;
     GameObject player_area;
@@ -15,12 +15,10 @@ public class ActivePlayer : Player
     {
         Health = BASE_HEALTH;
         Hand = new Hand(MAX_HAND_CARD_COUNT);
-
     }
 
     void Start()
     {
-
         player_id = this.transform.name[1] - 47; // converting ascii digit to real id (0 -> 48, 1 -> 49, etc.) 
                                                  // also adjusting 1 extra to account for ui naming (p1_name instead of p0_name)
         string display_ui_name = "p" + player_id + "_name";
@@ -55,12 +53,15 @@ public class ActivePlayer : Player
 
         //check if every player is dead. if yes, end game. if not, do nothing.
         bool everyoneIsDead = true;
-        foreach (Player p in GameInfo.singleton.Players)
-        {
-            if (!p.isDead)
-                everyoneIsDead = false;
-        }
 
+        if (GameInfo.singleton)
+        {
+            foreach (Player p in GameInfo.singleton.Players)
+            {
+                if (!p.isDead)
+                    everyoneIsDead = false;
+            }
+        }
         if (everyoneIsDead)
             SceneManager.LoadScene("loseScreen");
     }

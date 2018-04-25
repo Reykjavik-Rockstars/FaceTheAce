@@ -33,23 +33,26 @@ public class GameController : MonoBehaviour
         p1HealthText = GameObject.FindWithTag("p1_health_text").GetComponent<Text>();
         p1NameText = GameObject.FindWithTag("p1_name_text").GetComponent<Text>();
 
-        p2HealthText = GameObject.FindWithTag("p2_health_text").GetComponent<Text>();
-        p3HealthText = GameObject.FindWithTag("p3_health_text").GetComponent<Text>();
-        p4HealthText = GameObject.FindWithTag("p4_health_text").GetComponent<Text>();
-        p5HealthText = GameObject.FindWithTag("p5_health_text").GetComponent<Text>();
-        p2NameText = GameObject.FindWithTag("p2_name_text").GetComponent<Text>();
-        p3NameText = GameObject.FindWithTag("p3_name_text").GetComponent<Text>();
-        p4NameText = GameObject.FindWithTag("p4_name_text").GetComponent<Text>();
-        p5NameText = GameObject.FindWithTag("p5_name_text").GetComponent<Text>();
+        var go = GameObject.FindWithTag("p2_health_text");
+        p2HealthText = go ? go.GetComponent<Text>() : null;
+        go = GameObject.FindWithTag("p2_name_text");
+        p2NameText = go ? go.GetComponent<Text>() : null;
 
-        p2HealthText = GameObject.FindWithTag("p2_health_text").GetComponent<Text>();
-        p3HealthText = GameObject.FindWithTag("p3_health_text").GetComponent<Text>();
-        p4HealthText = GameObject.FindWithTag("p4_health_text").GetComponent<Text>();
-        p5HealthText = GameObject.FindWithTag("p5_health_text").GetComponent<Text>();
-        p2NameText = GameObject.FindWithTag("p2_name_text").GetComponent<Text>();
-        p3NameText = GameObject.FindWithTag("p3_name_text").GetComponent<Text>();
-        p4NameText = GameObject.FindWithTag("p4_name_text").GetComponent<Text>();
-        p5NameText = GameObject.FindWithTag("p5_name_text").GetComponent<Text>();
+        go = GameObject.FindWithTag("p3_health_text");
+        p3HealthText = go ? go.GetComponent<Text>() : null;
+        go = GameObject.FindWithTag("p3_name_text");
+        p3NameText = go ? go.GetComponent<Text>() : null;
+
+        go = GameObject.FindWithTag("p4_health_text");
+        p4HealthText = go ? go.GetComponent<Text>() : null;
+        go = GameObject.FindWithTag("p4_name_text");
+        p4NameText = go ? go.GetComponent<Text>() : null;
+
+        go = GameObject.FindWithTag("p5_health_text");
+        p5HealthText = go ? go.GetComponent<Text>() : null;
+        go = GameObject.FindWithTag("p5_name_text");
+        p5NameText = go ? go.GetComponent<Text>() : null;
+
     }
 
     void Start()
@@ -61,17 +64,26 @@ public class GameController : MonoBehaviour
     {
         gameStateText.text = "Game State:\n" + FSM.singleton.currentState.ToString();
         aceHealthText.text = "Ace  Health: " + gameInfo.Boss.Health.ToString();
-        p1HealthText.text = "Health: " + gameInfo.Players[0].Health.ToString();
+        if (gameInfo.Players.Count > 0)
+            p1HealthText.text = "Health: " + gameInfo.Players[0].Health.ToString();
+        if (gameInfo.Players.Count > 1)
+            p2HealthText.text = "Health: " + gameInfo.Players[1].Health.ToString();
+        if (gameInfo.Players.Count > 2)
+            p3HealthText.text = "Health: " + gameInfo.Players[2].Health.ToString();
+        if (gameInfo.Players.Count > 3)
+            p4HealthText.text = "Health: " + gameInfo.Players[3].Health.ToString();
+        if (gameInfo.Players.Count > 4)
+            p5HealthText.text = "Health: " + gameInfo.Players[4].Health.ToString();
+
         switch (FSM.singleton.currentState)
         {
             case FSM.gameState.Draw:
                 instructionsText.text = "Instructions:\n"
-                    + "Draw 3 cards and\n"
-                    + "click End Turn.";
+                    + "Draw 3 cards and click End Turn.";
                 break;
             case FSM.gameState.Select:
                 instructionsText.text = "Instructions:\n"
-                    + "BLAH BLAH BLAH";
+                    + "Drag a card from your hand to the desired target. Then click End Turn";
                 break;
             case FSM.gameState.Action:
                 break;

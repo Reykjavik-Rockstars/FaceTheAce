@@ -29,9 +29,7 @@ public class Deal : MonoBehaviour, IPointerClickHandler
                 }
         */
         var hand = GameInfo.singleton.self.Hand;
-
-        //if (GameObject.FindWithTag("Hand").transform.childCount < 5 && 
-        Debug.Log("POINTER CLICK");
+        Debug.Log("Deal.OnPointerClick()...cards held in hand (before) = " + hand.GetHandCardsCount().ToString());
         if (hand.GetHandCardsCount() < hand.GetMaxHandCardsCount() &&
             FSM.singleton.currentState == FSM.gameState.Draw)
         {
@@ -43,6 +41,9 @@ public class Deal : MonoBehaviour, IPointerClickHandler
             Debug.Log("Hand cards held count: " + hand.GetHandCardsCount().ToString());
             if (hand.GetHandCardsCount() == hand.GetMaxHandCardsCount()) FSM.singleton.nextTurnButton.interactable = true;
         }
+
+        Debug.Log("Deal.OnPointerClick()...max cards for hand (after) = " + hand.GetMaxHandCardsCount().ToString());
+        Debug.Log("Deal.OnPointerClick()...currentState = " + FSM.singleton.currentState.ToString());
     }
 
 }

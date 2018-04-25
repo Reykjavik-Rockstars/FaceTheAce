@@ -15,8 +15,13 @@ public class HandDropZone : DropZone
     {
         if (hand == null)
             hand = GameInfo.singleton.self.Hand;
-    }
 
+        CanvasGroup group;
+        if (hand.GetHandCardsCount() == hand.GetMaxHandCardsCount() && FSM.singleton.currentState == FSM.gameState.Select)
+            SetCardsBlockRaycast(true);
+        else
+            SetCardsBlockRaycast(false);
+    }
     protected override void DroppedEvent(Draggable d)
     {
         if (this.transform.childCount <= hand.GetMaxHandCardsCount())

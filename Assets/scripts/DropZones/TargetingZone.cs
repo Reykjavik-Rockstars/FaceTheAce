@@ -34,6 +34,7 @@ public class TargetingZone : DropZone {
             d.parentToReturnTo = this.transform;
             myCard = d;
             CardDisplay card = d.gameObject.GetComponent<CardDisplay>();
+            GameInfo.singleton.self.Hand.RemoveCard(card);
             GameInfo.singleton.unresolvedCards.Add(card);
         }
         else

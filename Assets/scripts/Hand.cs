@@ -16,6 +16,11 @@ public class Hand
         if (m_hand.Count < MAX_HAND_CARD_COUNT)
         {
             m_hand.Add(card);
+            Debug.Log("card was successfully added, Hand cards held count: " + m_hand.Count.ToString());
+        }
+        else
+        {
+            Debug.Log("card was not added, Hand cards held count: " + m_hand.Count.ToString());
         }
     }
 

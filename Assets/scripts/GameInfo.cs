@@ -99,6 +99,7 @@ public class GameInfo : MonoBehaviour
         }
         foreach (TargetingZone targetZone in playerTargetZones)
         {
+
             foreach (Transform child in targetZone.transform)
             {
                 group = child.gameObject.GetComponent<CanvasGroup>();

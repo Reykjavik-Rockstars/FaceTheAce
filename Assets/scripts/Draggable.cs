@@ -5,7 +5,6 @@ using UnityEngine.EventSystems;
 
 public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
-
     public Transform parentToReturnTo = null;
     public Transform placeholderParent = null;
     public Vector2 dragOffset = new Vector2(0f, 0f);
@@ -17,7 +16,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         Debug.Log("OnBeginDrag");
         dragOffset = eventData.position - (Vector2)this.transform.position;
 
-        //this.gameObject.GetComponent<CanvasGroup>().blocksRaycasts = true;    <--------  NEED THIS SOMEWHERE!!!!!!!
         placeholder = new GameObject();
         //Debug.Log("placeholder created");
         placeholder.transform.SetParent(this.transform.parent);
@@ -33,13 +31,16 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         placeholderParent = parentToReturnTo;
         this.transform.SetParent(this.transform.parent.parent);
 
-        GetComponent<CanvasGroup>().blocksRaycasts = false;
+        //GetComponent<CanvasGroup>().blocksRaycasts = false;
+        if (parentToReturnTo = GameObject.FindWithTag("Hand").transform)
+        {
+            Debug.Log("Yup, we the hand");
+        }
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         //Debug.Log ("OnDrag");
-
         this.transform.position = eventData.position - dragOffset;
 
         if (placeholder.transform.parent != placeholderParent)
@@ -62,7 +63,6 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
 
         placeholder.transform.SetSiblingIndex(newSiblingIndex);
-
     }
 
     // OnEndDrag occurs after OnDrop (in DropZone)
@@ -75,19 +75,7 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
 
         this.transform.SetSiblingIndex(placeholder.transform.GetSiblingIndex());
 
-        GetComponent<CanvasGroup>().blocksRaycasts = false;
-
-        var zone = this.transform.parent.name.ToString();
-        Debug.Log("OnEndDrag for zone " + zone + "...");
-        if (zone == "Ace" ||
-            zone == "self_target_zone")
-        {
-            FSM.singleton.cardHasBeenPlayedDuringSelectGameState = true;
-        }
-        else
-        {
-
-        }
+        //GetComponent<CanvasGroup>().blocksRaycasts = false;
 
         Destroy(placeholder);
     }
