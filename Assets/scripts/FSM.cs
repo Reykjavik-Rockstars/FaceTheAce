@@ -8,7 +8,7 @@ public class FSM : MonoBehaviour
     public static FSM singleton;
 
     public Button nextTurnButton;
-
+    public bool cardHasBeenPlayedDuringSelectGameState;
     void Awake()
     {
         singleton = this;

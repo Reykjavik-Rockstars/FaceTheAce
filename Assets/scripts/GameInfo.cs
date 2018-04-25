@@ -10,15 +10,17 @@ public class GameInfo : MonoBehaviour
 
     public BossPlayer Boss;
     public Player self;
+
     public List<Player> Players;
     public List<CardDisplay> Deck;
-
     public List<CardDisplay> unresolvedCards;
     public List<Effect> ActiveEffects;
 
-    public List<TargetingZone> playerTargetZones;
     public TargetingZone selfTargetZone;
     public TargetingZone aceTargetZone;
+
+    public List<TargetingZone> playerTargetZones;
+
 
     void Awake()
     {
@@ -28,12 +30,8 @@ public class GameInfo : MonoBehaviour
         unresolvedCards = new List<CardDisplay>();
         playerTargetZones = new List<TargetingZone>();
 
-        GameObject PlayerObject = new GameObject();
-        PlayerObject.name = "Player 1_Object";
-        PlayerObject.AddComponent<ActivePlayer>();
-        ActivePlayer player = PlayerObject.GetComponent<ActivePlayer>();
-        player.Username = "Player 1";
-        self = player;
+        ListPlayer("Player 1");
+        self = Players[0];
 
         GameObject AceObject = new GameObject();
         AceObject.name = "AceObject";
@@ -45,7 +43,7 @@ public class GameInfo : MonoBehaviour
     private void Start()
     {
         aceTargetZone.target = Boss;
-        selfTargetZone.target = self;
+        selfTargetZone.target = Players[0];
     }
 
     public bool ListPlayer(string username)
@@ -101,6 +99,7 @@ public class GameInfo : MonoBehaviour
         }
         foreach (TargetingZone targetZone in playerTargetZones)
         {
+
             foreach (Transform child in targetZone.transform)
             {
                 group = child.gameObject.GetComponent<CanvasGroup>();

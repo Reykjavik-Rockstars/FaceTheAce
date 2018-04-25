@@ -6,27 +6,27 @@ using UnityEngine.UI;
 public class CardDisplay : MonoBehaviour {
 
     public Effect effect;
-	public Text nameText;
-	public Text descriptionText;
-	public Sprite artworkImage;
+    public Text nameText;
+    public Text descriptionText;
+    public Sprite artworkImage;
     public Effect GetEffect()
     {
         return effect;
     }
-	//public Text manaText;
-	//public Text attackText;
-	//public Text healthText;
+    //public Text manaText;
+    //public Text attackText;
+    //public Text healthText;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         
-		nameText.text = effect.getName;
-		descriptionText.text = effect.getDescription;
-		artworkImage = effect.getArt;
+        nameText.text = effect.getName;
+        descriptionText.text = effect.getDescription;
+        artworkImage = effect.getArt;
         
-		//manaText.text = card.manaCost.ToString();
-		//attackText.text = card.attack.ToString();
-		//healthText.text = card.health.ToString();
-	}
-	
+        //manaText.text = card.manaCost.ToString();
+        //attackText.text = card.attack.ToString();
+        //healthText.text = card.health.ToString();
+    }
+    
 }

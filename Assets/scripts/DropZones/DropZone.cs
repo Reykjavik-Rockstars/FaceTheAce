@@ -3,7 +3,6 @@ using UnityEngine.EventSystems;
 
 public abstract class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
-
     public void OnPointerEnter(PointerEventData eventData)
     {
         //Debug.Log("OnPointerEnter");
@@ -32,9 +31,10 @@ public abstract class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandl
         }
     }
 
+    // OnDrop occurs before OnEndDrag (in Draggable)
     public void OnDrop(PointerEventData eventData)
     {
-        //Debug.Log(eventData.pointerDrag.name + " was dropped on " + gameObject.name);
+        Debug.Log(eventData.pointerDrag.name + " was dropped on " + gameObject.name);
 
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         if (d != null)

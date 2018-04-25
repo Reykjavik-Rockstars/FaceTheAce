@@ -61,7 +61,7 @@ GameObject:
   - component: {fileID: 114971079302410426}
   m_Layer: 5
   m_Name: Sidewinder
-  m_TagString: Untagged
+  m_TagString: card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,6 +194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
   placeholderParent: {fileID: 0}
+  dragOffset: {x: 0, y: 0}
 --- !u!114 &114549440425104632
 MonoBehaviour:
   m_ObjectHideFlags: 1
