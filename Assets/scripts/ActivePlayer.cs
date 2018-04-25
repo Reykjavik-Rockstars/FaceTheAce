@@ -46,10 +46,10 @@ public class ActivePlayer : Player
 
     }
 
-    public override void Die()
+    public override void CmdDie()
     {
         //let player die normally
-        base.Die();
+        base.CmdDie();
 
         //check if every player is dead. if yes, end game. if not, do nothing.
         bool everyoneIsDead = true;
