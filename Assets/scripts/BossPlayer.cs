@@ -10,7 +10,7 @@ public class BossPlayer : Player {
         Hand = new Hand(MAX_HAND_CARD_COUNT);
     }
 
-    public override void CmdDie()
+    public override void Die()
     {
         SceneManager.LoadScene("winScreen");
     }
