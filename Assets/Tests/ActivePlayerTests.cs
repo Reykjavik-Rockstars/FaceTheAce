@@ -20,7 +20,7 @@ public class ActivePlayerTests
         var attackingPlayer = new GameObject().AddComponent<ActivePlayer>();
 
         var health = player.Health;
-        player.ReceiveDamage(1, attackingPlayer);
+        player.CmdReceiveDamage(1);
         Assert.AreEqual(health - 1, player.Health);
     }
 
@@ -32,10 +32,10 @@ public class ActivePlayerTests
 
         while (player.Health > 0)
         {
-            player.ReceiveDamage(1, attackingPlayer);
+            player.CmdReceiveDamage(1);
         }
 
-        player.ReceiveDamage(1, attackingPlayer);
+        player.CmdReceiveDamage(1);
 
         Assert.AreEqual(0, player.Health);
     }
@@ -44,9 +44,9 @@ public class ActivePlayerTests
     public void ReceiveHealTest()
     {
         var player = new GameObject().AddComponent<ActivePlayer>();
-        player.ReceiveDamage(1, player);
+        player.CmdReceiveDamage(1);
         var health = player.Health;
-        player.ReceiveHeal(1, player);
+        player.CmdReceiveDamage(1);
         Assert.AreEqual(health + 1, player.Health);
     }
 
@@ -57,9 +57,9 @@ public class ActivePlayerTests
 
         while (player.Health < ActivePlayer.BASE_HEALTH)
         {
-            player.ReceiveHeal(1, player);
+            player.CmdReceiveHeal(1);
         }
-        player.ReceiveHeal(1, player);
+        player.CmdReceiveHeal(1);
 
         Assert.AreEqual(ActivePlayer.BASE_HEALTH, player.Health);
     }

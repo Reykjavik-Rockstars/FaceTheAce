@@ -7,8 +7,11 @@ public class Player : NetworkBehaviour
 {
 
     bool flag = true;
-    public int MAX_HEALTH;
+    public int MAX_HEALTH = 50;
+
+    [SyncVar]
     public string Username;
+    [SyncVar]
     public int Health;
     public Hand Hand;
     //on start, player is not dead. Only dead once hp falls to 0 or less
@@ -34,8 +37,10 @@ public class Player : NetworkBehaviour
             flag = false;
         }
     }
+
     public Del_Int OnDamaged;
-    public virtual void ReceiveDamage(int damage, Player source)
+    [Command]
+    public virtual void CmdReceiveDamage(int damage)
     {
         if (OnDamaged != null) OnDamaged(damage);
 
@@ -49,7 +54,7 @@ public class Player : NetworkBehaviour
             else if (Health <= damage)
             {
                 Health = 0;
-                Die();
+                CmdDie();
             }
             //make sure player health is 0 for other conditions. prevent negative health.
             else
@@ -58,7 +63,8 @@ public class Player : NetworkBehaviour
     }
 
     public Del_Int OnHealed;
-    public virtual void ReceiveHeal(int heal, Player source)
+    [Command]
+    public virtual void CmdReceiveHeal(int heal)
     {
         if (OnHealed != null) OnHealed(heal);
         
@@ -84,7 +90,8 @@ public class Player : NetworkBehaviour
     }
 
     public Del_Void OnDeath;
-    public virtual void Die()
+    [Command]
+    public virtual void CmdDie()
     {
         if (OnDeath != null) OnDeath();
         isDead = true;

@@ -5,16 +5,16 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{3D77CE28-B75C-24E7-4A92-C185B3CE1A36}</ProjectGuid>
+    <ProjectGuid>{693C37B0-EA3D-50CC-D618-38E3B4290B4E}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Assembly-CSharp</AssemblyName>
+    <AssemblyName>Assembly-CSharp-Editor</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Unity Subset v3.5</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Unity Full v3.5</TargetFrameworkProfile>
     <CompilerResponseFile></CompilerResponseFile>
-    <UnityProjectType>Game:1</UnityProjectType>
+    <UnityProjectType>Editor:5</UnityProjectType>
     <UnityBuildTarget>StandaloneWindows64:19</UnityBuildTarget>
     <UnityVersion>2017.3.1f1</UnityVersion>
     <RootNamespace></RootNamespace>
@@ -294,49 +294,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Lobby\Scripts\DraggablePanel.cs" />
-    <Compile Include="Assets\Lobby\Scripts\EventSystemChecker.cs" />
-    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyCountdownPanel.cs" />
-    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyHook.cs" />
-    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyInfoPanel.cs" />
-    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyMainMenu.cs" />
-    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyManager.cs" />
-    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyPlayer.cs" />
-    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyPlayerList.cs" />
-    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyServerEntry.cs" />
-    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyServerList.cs" />
-    <Compile Include="Assets\Lobby\Scripts\Lobby\LobbyTopPanel.cs" />
-    <Compile Include="Assets\scripts\ActivePlayer.cs" />
-    <Compile Include="Assets\scripts\BossPlayer.cs" />
-    <Compile Include="Assets\scripts\Cards\Card.cs" />
-    <Compile Include="Assets\scripts\Cards\CardDisplay.cs" />
-    <Compile Include="Assets\scripts\Cards\CriticalStrike.cs" />
-    <Compile Include="Assets\scripts\Cards\DodgeRoll.cs" />
-    <Compile Include="Assets\scripts\Cards\Effect.cs" />
-    <Compile Include="Assets\scripts\Cards\HeadShot.cs" />
-    <Compile Include="Assets\scripts\Cards\HealingBeam.cs" />
-    <Compile Include="Assets\scripts\Cards\OpenFire.cs" />
-    <Compile Include="Assets\scripts\Cards\Sidewinder.cs" />
-    <Compile Include="Assets\scripts\Cards\Suppression.cs" />
-    <Compile Include="Assets\scripts\Cards\Waduhek.cs" />
-    <Compile Include="Assets\scripts\Deal.cs" />
-    <Compile Include="Assets\scripts\delegates.cs" />
-    <Compile Include="Assets\scripts\Draggable.cs" />
-    <Compile Include="Assets\scripts\DropZones\AceTargetingZone.cs" />
-    <Compile Include="Assets\scripts\DropZones\DropZone.cs" />
-    <Compile Include="Assets\scripts\DropZones\HandDropZone.cs" />
-    <Compile Include="Assets\scripts\DropZones\SelfTargetingZone.cs" />
-    <Compile Include="Assets\scripts\DropZones\TargetingZone.cs" />
-    <Compile Include="Assets\scripts\EndTurn.cs" />
-    <Compile Include="Assets\scripts\FSM.cs" />
-    <Compile Include="Assets\scripts\GameController.cs" />
-    <Compile Include="Assets\scripts\GameInfo.cs" />
-    <Compile Include="Assets\scripts\Hand.cs" />
-    <Compile Include="Assets\scripts\Player.cs" />
-    <Compile Include="Assets\scripts\quitScene.cs" />
-    <Compile Include="Assets\scripts\setParent.cs" />
-    <Compile Include="Assets\Tests\ActivePlayerTests.cs" />
-    <Compile Include="Assets\Tests\NewPlayModeTest1.cs" />
+    <ProjectReference Include="RockstarGame.csproj">
+      <Project>{3D77CE28-B75C-24E7-4A92-C185B3CE1A36}</Project>
+      <Name>RockstarGame</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Assets\Tests\Editor\PlayerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Lobby\Documentation.txt" />

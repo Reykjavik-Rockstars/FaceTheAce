@@ -14,7 +14,7 @@ public class HeadShot : Effect {
     public override void Activate()
     {
         base.Activate();
-        _targets[0].ReceiveDamage(35, _owner);
+        _targets[0].CmdReceiveDamage(35);
         Inactivate();
     }
 

@@ -15,7 +15,7 @@ public class HealingBeam : Effect {
     {
         base.Activate();
         foreach (Player p in _targets){
-            p.ReceiveHeal(30,_owner);
+            p.CmdReceiveHeal(30);
         }
         Inactivate();
     }

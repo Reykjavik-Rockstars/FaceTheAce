@@ -14,7 +14,7 @@ public class CriticalStrike : Effect {
     public override void Activate()
     {
         base.Activate();
-        _targets[0].ReceiveDamage((int)Random.Range(10.0f,35.0f), _owner);
+        _targets[0].CmdReceiveDamage((int)Random.Range(10.0f,35.0f));
         Inactivate();
     }
 }
