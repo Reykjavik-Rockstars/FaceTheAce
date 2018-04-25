@@ -7,7 +7,7 @@ public class Player : NetworkBehaviour
 {
 
     bool flag = true;
-    public int MAX_HEALTH = 50;
+    public int MAX_HEALTH;
 
     [SyncVar]
     public string Username;
