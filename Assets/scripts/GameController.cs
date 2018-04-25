@@ -52,7 +52,6 @@ public class GameController : MonoBehaviour
         p5HealthText = go ? go.GetComponent<Text>() : null;
         go = GameObject.FindWithTag("p5_name_text");
         p5NameText = go ? go.GetComponent<Text>() : null;
-
     }
 
     void Start()
@@ -83,9 +82,11 @@ public class GameController : MonoBehaviour
                 break;
             case FSM.gameState.Select:
                 instructionsText.text = "Instructions:\n"
-                    + "Drag a card from your hand to the desired target. Then click End Turn";
+                    + "Drag a card from your hand to the desired target. Then click End Turn.";
                 break;
             case FSM.gameState.Action:
+                instructionsText.text = "Instructions:\n"
+                    + "Click End Turn.";
                 break;
             case FSM.gameState.Confirm:
                 break;

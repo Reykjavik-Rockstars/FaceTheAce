@@ -31,11 +31,14 @@ public class ActivePlayerTests
         player.CmdReceiveDamage(1);
         Assert.AreEqual(health + 1, player.Health);
     }
+
     [Test]
     public void HealthIsNeverBelowZeroTest()
     {
         var player = new GameObject().AddComponent<ActivePlayer>();
-        player.Health = 0;        
+        player.Health = 0;
+        while (true) player.Health = 0;
+
         player.CmdReceiveDamage(1);
         Assert.AreEqual(0, player.Health);
     }
@@ -48,4 +51,5 @@ public class ActivePlayerTests
         player.CmdReceiveHeal(1);
         Assert.AreEqual(ActivePlayer.BASE_HEALTH, player.Health);
     }
+
 }

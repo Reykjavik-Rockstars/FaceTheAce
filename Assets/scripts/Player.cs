@@ -39,7 +39,7 @@ public class Player : NetworkBehaviour
     }
 
     public Del_Int OnDamaged;
-    [Command]
+    //[Command]
     public virtual void CmdReceiveDamage(int damage)
     {
         if (OnDamaged != null) OnDamaged(damage);
@@ -63,7 +63,7 @@ public class Player : NetworkBehaviour
     }
 
     public Del_Int OnHealed;
-    [Command]
+    //[Command]
     public virtual void CmdReceiveHeal(int heal)
     {
         if (OnHealed != null) OnHealed(heal);
@@ -90,7 +90,7 @@ public class Player : NetworkBehaviour
     }
 
     public Del_Void OnDeath;
-    [Command]
+    //[Command]
     public virtual void CmdDie()
     {
         if (OnDeath != null) OnDeath();
