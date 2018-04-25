@@ -757,7 +757,7 @@ GameObject:
   - component: {fileID: 379715158}
   m_Layer: 5
   m_Name: end_turn
-  m_TagString: Untagged
+  m_TagString: end_turn_button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -881,7 +881,7 @@ GameObject:
   - component: {fileID: 426625974}
   m_Layer: 5
   m_Name: p2_area
-  m_TagString: playArea
+  m_TagString: p2_area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1176,7 +1176,7 @@ GameObject:
   - component: {fileID: 566041906}
   m_Layer: 5
   m_Name: p4_area
-  m_TagString: playArea
+  m_TagString: p4_area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2325,7 +2325,7 @@ GameObject:
   - component: {fileID: 1794790173}
   m_Layer: 5
   m_Name: p5_area
-  m_TagString: playArea
+  m_TagString: p5_area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2535,7 +2535,7 @@ GameObject:
   - component: {fileID: 1908236392}
   m_Layer: 5
   m_Name: p3_area
-  m_TagString: playArea
+  m_TagString: p3_area
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

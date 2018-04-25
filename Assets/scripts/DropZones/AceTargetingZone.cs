@@ -2,12 +2,12 @@
 {
     protected override void Awake()
     {
-        //GameInfo.singleton.aceTargetZone = this;
+        GameInfo.singleton.aceTargetZone = this;
     }
 
     protected override void Start()
     {
-        GameInfo.singleton.aceTargetZone = this;
+        //GameInfo.singleton.aceTargetZone = this;
     }
 
 }

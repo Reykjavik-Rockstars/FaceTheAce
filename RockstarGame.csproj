@@ -332,6 +332,7 @@
     <Compile Include="Assets\scripts\GameController.cs" />
     <Compile Include="Assets\scripts\GameInfo.cs" />
     <Compile Include="Assets\scripts\Hand.cs" />
+    <Compile Include="Assets\scripts\MainGameInitializer.cs" />
     <Compile Include="Assets\scripts\Player.cs" />
     <Compile Include="Assets\scripts\quitScene.cs" />
     <Compile Include="Assets\scripts\setParent.cs" />

@@ -20,6 +20,11 @@ TagManager:
   - p5_name_text
   - instructions_text
   - card
+  - p2_area
+  - p3_area
+  - p4_area
+  - p5_area
+  - end_turn_button
   layers:
   - Default
   - TransparentFX

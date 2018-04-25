@@ -130,8 +130,8 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 3497ab42461966d6c5a33a0d8a10a100 Assembly-CSharp.dll:.ActivePlayer
-9b064fa31b005302422dcb51f7728afa Assembly-CSharp.dll:.GameController
-356edfb0cc7dafd292dc79ddf2dc004b Assembly-CSharp.dll:.GameInfo
+256a4a52d95120c3d68c7e28cffffef1 Assembly-CSharp.dll:.GameController
+f956eaf4780c0077f369ea0c867b8c80 Assembly-CSharp.dll:.GameInfo
 c99104cca6f33db39d236f8efb9aafb4 Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyCountdownPanel
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.quitScene
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
@@ -178,3 +178,4 @@ c348d60f1d4c744cf1008ddcdf3c19b4 Assembly-CSharp.dll:.AceTargetingZone
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Prototype.NetworkLobby.DraggablePanel
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DodgeRoll
 239d2cc8d353bbfcbefc27fa8f0221cc Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyServerList
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MainGameInitializer

@@ -14,7 +14,8 @@ public class FSM : MonoBehaviour
         singleton = this;
     }
 
-    private void Start()
+
+    public void MainGameStart()
     {
         enterFSM();
     }
@@ -52,9 +53,10 @@ public class FSM : MonoBehaviour
 
     public void enterFSM()
     {
+        GameObject button = GameObject.FindGameObjectWithTag("end_turn_button");
+        nextTurnButton = button.GetComponent<Button>();
         nextTurnButton.onClick.RemoveAllListeners();
         nextTurnButton.onClick.AddListener(drawToSelect);
-        //TODO: Set the button to be non-interactable here, tell card draw action to re-activate
         nextTurnButton.interactable = false;
         currentState = gameState.Draw;
         if (onDrawBegin != null)

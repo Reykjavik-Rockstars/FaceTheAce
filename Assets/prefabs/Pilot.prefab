@@ -20,12 +20,11 @@ GameObject:
   m_Component:
   - component: {fileID: 224311972250812806}
   - component: {fileID: 114026289933652496}
-  - component: {fileID: 114402872318569756}
   - component: {fileID: 114361920631154208}
-  - component: {fileID: 114037519282649760}
   - component: {fileID: 331479372180532370}
   - component: {fileID: 222989959823295270}
   - component: {fileID: 114811978420056280}
+  - component: {fileID: 114108438246887218}
   m_Layer: 0
   m_Name: Pilot
   m_TagString: Untagged
@@ -65,7 +64,7 @@ MonoBehaviour:
     i15: 129
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
---- !u!114 &114037519282649760
+--- !u!114 &114108438246887218
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -73,9 +72,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1484684851617028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59083875797fa9d4a8fb460b6dd926d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b988b853c9cbed418bbc83c54b2e981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_HEALTH: 50
   Username: 
   Health: 0
   isDead: 0
@@ -89,17 +89,6 @@ MonoBehaviour:
   m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c092fe1c0731bef4a86ceffd194d2f32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114402872318569756
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1484684851617028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &114811978420056280

@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using UnityEditor.UI;
+//using UnityEditor.UI;
 
 public class TargetingZone : DropZone {
 
@@ -13,7 +13,7 @@ public class TargetingZone : DropZone {
 
     protected virtual void Start()
     {
-        GameInfo.singleton.playerTargetZones.Add(this);
+        //GameInfo.singleton.playerTargetZones.Add(this);
     }
     protected override void EnteredEvent(Draggable d)
     {

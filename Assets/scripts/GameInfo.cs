@@ -6,10 +6,10 @@ public class GameInfo : MonoBehaviour
     public static GameInfo singleton;
 
     const int MAX_PLAYERS = 5;
-    int playerCount = 0;
+    int playerCount = 1;
 
     public BossPlayer Boss;
-    public Player self;
+    public ActivePlayer self;
 
     public List<Player> Players;
     public List<CardDisplay> Deck;
@@ -18,8 +18,9 @@ public class GameInfo : MonoBehaviour
 
     public TargetingZone selfTargetZone;
     public TargetingZone aceTargetZone;
-
     public List<TargetingZone> playerTargetZones;
+
+    GameObject placeholder_self;
 
 
     void Awake()
@@ -30,35 +31,53 @@ public class GameInfo : MonoBehaviour
         unresolvedCards = new List<CardDisplay>();
         playerTargetZones = new List<TargetingZone>();
 
-        ListPlayer("Player 1");
-        self = Players[0];
+        placeholder_self = new GameObject();
+        placeholder_self.AddComponent<ActivePlayer>();
+        Players.Add(placeholder_self.GetComponent<ActivePlayer>());
 
         GameObject AceObject = new GameObject();
+        DontDestroyOnLoad(AceObject);
         AceObject.name = "AceObject";
         AceObject.AddComponent<BossPlayer>();
         Boss = AceObject.GetComponent<BossPlayer>();
         Boss.Username = "Ace";
     }
 
-    private void Start()
+    public void MainSceneStart()
     {
         aceTargetZone.target = Boss;
         selfTargetZone.target = Players[0];
+        Debug.Log(self.Username);
+        GameController.singleton.selfNameText.text = self.Username;
+
+        for (int i = 2; i <= 5; ++i)
+        {
+            var go = GameObject.FindWithTag("p" + i + "_area");
+            playerTargetZones.Add(go ? go.GetComponent<TargetingZone>() : null);
+            for (int j = 1; j <= 4; ++j)
+            {
+                if (Players.Count > j)
+                {
+                    playerTargetZones[j - 1].target = Players[j];
+                }
+            }
+        }
     }
 
-    public bool ListPlayer(string username)
+    public void ListSelf(ActivePlayer selfPlayer)
+    {
+        Debug.Log("LOCAL PLAYER");
+        Players[0] = selfPlayer;
+        self = selfPlayer;
+    }
+
+    public bool ListPlayer(ActivePlayer otherPlayer)
     {
         if (playerCount == MAX_PLAYERS)
             return false;
         else
         {
-            GameObject PlayerObject = new GameObject();
-            PlayerObject.name = username+"_Object";
-            PlayerObject.AddComponent<ActivePlayer>();
-            ActivePlayer player = PlayerObject.GetComponent<ActivePlayer>();
-            player.Username = username;
-            Players.Add(player);
-            playerCount++;
+            Players.Add(otherPlayer);
             return true;
         }
     }

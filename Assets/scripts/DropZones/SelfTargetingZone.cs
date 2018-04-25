@@ -2,11 +2,9 @@
 {
     protected override void Awake()
     {
-        
+        GameInfo.singleton.selfTargetZone = this;
     }
     protected override void Start()
     {
-        GameInfo.singleton.selfTargetZone = this;
-        //base.Start();
     }
 }
