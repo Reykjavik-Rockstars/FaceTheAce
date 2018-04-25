@@ -87,6 +87,7 @@ c63db43c730fa2cbb8ca07de15898cb6 UnityEngine.UI.dll:UnityEngine.UI.Toggle
 f61c0793411f10cf5fbfa1473fef5ef2 UnityEngine.UI.dll:UnityEngine.UI.ToggleGroup
 86d36c43c53541d667100dc90b89cfba UnityEngine.UI.dll:UnityEngine.EventSystems.TouchInputModule
 1b8c02d0aa82fbf036a2b9b2d713eec3 UnityEngine.UI.dll:UnityEngine.UI.VerticalLayoutGroup
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MainGameInitializer
 dc78624554e910c76d194ff50ce5b07a Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyServerEntry
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.HealingBeam
 3497ab42461966d6c5a33a0d8a10a100 Assembly-CSharp.dll:.Player
@@ -131,7 +132,7 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 3497ab42461966d6c5a33a0d8a10a100 Assembly-CSharp.dll:.ActivePlayer
 256a4a52d95120c3d68c7e28cffffef1 Assembly-CSharp.dll:.GameController
-f956eaf4780c0077f369ea0c867b8c80 Assembly-CSharp.dll:.GameInfo
+4a81d78f5b0a0f35ae8d1086e79af046 Assembly-CSharp.dll:.GameInfo
 c99104cca6f33db39d236f8efb9aafb4 Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyCountdownPanel
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.quitScene
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
@@ -178,4 +179,3 @@ c348d60f1d4c744cf1008ddcdf3c19b4 Assembly-CSharp.dll:.AceTargetingZone
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:Prototype.NetworkLobby.DraggablePanel
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.DodgeRoll
 239d2cc8d353bbfcbefc27fa8f0221cc Assembly-CSharp.dll:Prototype.NetworkLobby.LobbyServerList
-05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MainGameInitializer

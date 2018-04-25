@@ -15,24 +15,30 @@ public class ActivePlayer : Player
     void Awake()
     {
         Hand = new Hand(MAX_HAND_CARD_COUNT);
-        if (gameObject.GetComponent<NetworkIdentity>().localPlayerAuthority)
-        {
-            GameInfo.singleton.ListSelf(this);
-        }
-        else
-        {
-            GameInfo.singleton.ListPlayer(this);
-        }
+        DontDestroyOnLoad(gameObject);
         MAX_HEALTH = 50;
         Health = BASE_HEALTH;
     }
 
+    public override void OnStartLocalPlayer()
+    {
+        GameInfo.singleton.self = this;
+        GameObject GameInitializer = new GameObject();
+        GameInitializer.AddComponent<MainGameInitializer>();
+    }
+
     void Start()
     {
-        if (isLocalPlayer)
+        Username = this.transform.name;
+        Username = Username.Remove(0, 4); //remove [#] in front of object name
+        //player_username_display.GetComponent<Text>().text = Username;//update username ui
+        //player_health_display.GetComponent<Text>().text = "Health: " + Health; //update health ui
+        //this.transform.SetParent(player_area.transform);// set Pilot object to proper area
+        //this.transform.localPosition = Vector3.zero;// center object in p<#>_area
+
+        if (!isLocalPlayer)
         {
-            GameObject GameInitializer = new GameObject();
-            GameInitializer.AddComponent<MainGameInitializer>();
+            GameInfo.singleton.preListPlayer(this);
         }
         player_id = this.transform.name[1] - 47; // converting ascii digit to real id (0 -> 48, 1 -> 49, etc.) 
                                                  // also adjusting 1 extra to account for ui naming (p1_name instead of p0_name)
@@ -51,13 +57,6 @@ public class ActivePlayer : Player
 
         //player_health_display = GameObject.Find(display_ui_health);
         //player_area = GameObject.Find(ui_player_area);
-
-        Username = this.transform.name;
-        Username = Username.Remove(0, 4); //remove [#] in front of object name
-        //player_username_display.GetComponent<Text>().text = Username;//update username ui
-        //player_health_display.GetComponent<Text>().text = "Health: " + Health; //update health ui
-        //this.transform.SetParent(player_area.transform);// set Pilot object to proper area
-        //this.transform.localPosition = Vector3.zero;// center object in p<#>_area
 
     }
 

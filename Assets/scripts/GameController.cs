@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     void Awake()
     {
         singleton = this;
+        GameObject.DontDestroyOnLoad(gameObject);
     }
 
     void Start()

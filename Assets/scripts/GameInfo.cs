@@ -8,10 +8,13 @@ public class GameInfo : MonoBehaviour
     const int MAX_PLAYERS = 5;
     int playerCount = 1;
 
+    bool initialized = false;
+
     public BossPlayer Boss;
     public ActivePlayer self;
 
     public List<Player> Players;
+    public List<ActivePlayer> PrejoinList;
     public List<CardDisplay> Deck;
     public List<CardDisplay> unresolvedCards;
     public List<Effect> ActiveEffects;
@@ -31,10 +34,6 @@ public class GameInfo : MonoBehaviour
         unresolvedCards = new List<CardDisplay>();
         playerTargetZones = new List<TargetingZone>();
 
-        placeholder_self = new GameObject();
-        placeholder_self.AddComponent<ActivePlayer>();
-        Players.Add(placeholder_self.GetComponent<ActivePlayer>());
-
         GameObject AceObject = new GameObject();
         DontDestroyOnLoad(AceObject);
         AceObject.name = "AceObject";
@@ -45,9 +44,14 @@ public class GameInfo : MonoBehaviour
 
     public void MainSceneStart()
     {
+        ListSelf(self);
+        initialized = true;
+        foreach (ActivePlayer player in PrejoinList)
+        {
+            ListPlayer(player);
+        }
         aceTargetZone.target = Boss;
         selfTargetZone.target = Players[0];
-        Debug.Log(self.Username);
         GameController.singleton.selfNameText.text = self.Username;
 
         for (int i = 2; i <= 5; ++i)
@@ -66,8 +70,8 @@ public class GameInfo : MonoBehaviour
 
     public void ListSelf(ActivePlayer selfPlayer)
     {
-        Debug.Log("LOCAL PLAYER");
-        Players[0] = selfPlayer;
+
+        Players.Add(selfPlayer);
         self = selfPlayer;
     }
 
@@ -79,6 +83,18 @@ public class GameInfo : MonoBehaviour
         {
             Players.Add(otherPlayer);
             return true;
+        }
+    }
+
+    public void preListPlayer(ActivePlayer otherPlayer)
+    {
+        if (initialized)
+        {
+            ListPlayer(otherPlayer);
+        }
+        else
+        {
+            PrejoinList.Add(otherPlayer);
         }
     }
 
