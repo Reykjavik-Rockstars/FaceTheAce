@@ -4,4 +4,7 @@
     {
         GameInfo.singleton.selfTargetZone = this;
     }
+    protected override void Start()
+    {
+    }
 }

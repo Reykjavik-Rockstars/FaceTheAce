@@ -6,19 +6,25 @@ public class GameInfo : MonoBehaviour
     public static GameInfo singleton;
 
     const int MAX_PLAYERS = 5;
-    int playerCount = 0;
+    int playerCount = 1;
+
+    bool initialized = false;
 
     public BossPlayer Boss;
-    public Player self;
-    public List<Player> Players;
-    public List<CardDisplay> Deck;
+    public ActivePlayer self;
 
+    public List<Player> Players;
+    public List<ActivePlayer> PrejoinList;
+    public List<CardDisplay> Deck;
     public List<CardDisplay> unresolvedCards;
     public List<Effect> ActiveEffects;
 
-    public List<TargetingZone> playerTargetZones;
     public TargetingZone selfTargetZone;
     public TargetingZone aceTargetZone;
+    public List<TargetingZone> playerTargetZones;
+
+    GameObject placeholder_self;
+
 
     void Awake()
     {
@@ -28,40 +34,67 @@ public class GameInfo : MonoBehaviour
         unresolvedCards = new List<CardDisplay>();
         playerTargetZones = new List<TargetingZone>();
 
-        GameObject PlayerObject = new GameObject();
-        PlayerObject.name = "Player 1_Object";
-        PlayerObject.AddComponent<ActivePlayer>();
-        ActivePlayer player = PlayerObject.GetComponent<ActivePlayer>();
-        player.Username = "Player 1";
-        self = player;
-
         GameObject AceObject = new GameObject();
+        DontDestroyOnLoad(AceObject);
         AceObject.name = "AceObject";
         AceObject.AddComponent<BossPlayer>();
         Boss = AceObject.GetComponent<BossPlayer>();
         Boss.Username = "Ace";
     }
 
-    private void Start()
+    public void MainSceneStart()
     {
+        ListSelf(self);
+        initialized = true;
+        foreach (ActivePlayer player in PrejoinList)
+        {
+            ListPlayer(player);
+        }
         aceTargetZone.target = Boss;
-        selfTargetZone.target = self;
+        selfTargetZone.target = Players[0];
+        GameController.singleton.selfNameText.text = self.Username;
+
+        for (int i = 2; i <= 5; ++i)
+        {
+            var go = GameObject.FindWithTag("p" + i + "_area");
+            playerTargetZones.Add(go ? go.GetComponent<TargetingZone>() : null);
+            for (int j = 1; j <= 4; ++j)
+            {
+                if (Players.Count > j)
+                {
+                    playerTargetZones[j - 1].target = Players[j];
+                }
+            }
+        }
     }
 
-    public bool ListPlayer(string username)
+    public void ListSelf(ActivePlayer selfPlayer)
+    {
+
+        Players.Add(selfPlayer);
+        self = selfPlayer;
+    }
+
+    public bool ListPlayer(ActivePlayer otherPlayer)
     {
         if (playerCount == MAX_PLAYERS)
             return false;
         else
         {
-            GameObject PlayerObject = new GameObject();
-            PlayerObject.name = username+"_Object";
-            PlayerObject.AddComponent<ActivePlayer>();
-            ActivePlayer player = PlayerObject.GetComponent<ActivePlayer>();
-            player.Username = username;
-            Players.Add(player);
-            playerCount++;
+            Players.Add(otherPlayer);
             return true;
+        }
+    }
+
+    public void preListPlayer(ActivePlayer otherPlayer)
+    {
+        if (initialized)
+        {
+            ListPlayer(otherPlayer);
+        }
+        else
+        {
+            PrejoinList.Add(otherPlayer);
         }
     }
 
@@ -101,6 +134,7 @@ public class GameInfo : MonoBehaviour
         }
         foreach (TargetingZone targetZone in playerTargetZones)
         {
+
             foreach (Transform child in targetZone.transform)
             {
                 group = child.gameObject.GetComponent<CanvasGroup>();

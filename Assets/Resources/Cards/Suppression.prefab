@@ -57,12 +57,12 @@ GameObject:
   - component: {fileID: 114403771437348070}
   - component: {fileID: 114314553746842504}
   - component: {fileID: 225163042043645684}
-  - component: {fileID: 114733257035983620}
+  - component: {fileID: 114323093406321620}
   - component: {fileID: 114068487807712016}
   - component: {fileID: 114597718477791826}
   m_Layer: 5
   m_Name: Suppression
-  m_TagString: Untagged
+  m_TagString: card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c7ca3ad3c09a542a6fc39055f074e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 114733257035983620}
+  effect: {fileID: 114323093406321620}
   nameText: {fileID: 114053727410047440}
   descriptionText: {fileID: 114051246519888242}
   artworkImage: {fileID: 0}
@@ -236,6 +236,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parentToReturnTo: {fileID: 0}
   placeholderParent: {fileID: 0}
+  dragOffset: {x: 0, y: 0}
+--- !u!114 &114323093406321620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1363020088469028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44872971cf1d8b443be1c8407f3ac36e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114403771437348070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -282,17 +294,6 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: 1
   m_LayoutPriority: 1
---- !u!114 &114733257035983620
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1363020088469028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 36b21aa8f5824494fa59e76e98d1b94a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212706180472109086
 SpriteRenderer:
   m_ObjectHideFlags: 1

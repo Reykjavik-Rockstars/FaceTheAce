@@ -1,16 +1,17 @@
 ﻿using UnityEngine.SceneManagement;
 
 public class BossPlayer : Player {
-    const int MAX_HAND_CARD_COUNT = 5;
-    const int BASE_HEALTH = 250;
+    public const int MAX_HAND_CARD_COUNT = 5;
+    public const int BASE_HEALTH = 250;
 
     void Awake()
     {
-        Health = BASE_HEALTH;
+        MAX_HEALTH = BASE_HEALTH;
+        Health = MAX_HEALTH;
         Hand = new Hand(MAX_HAND_CARD_COUNT);
     }
 
-    public override void Die()
+    public override void CmdDie()
     {
         SceneManager.LoadScene("winScreen");
     }

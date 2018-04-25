@@ -310,11 +310,15 @@
     <Compile Include="Assets\scripts\BossPlayer.cs" />
     <Compile Include="Assets\scripts\Cards\Card.cs" />
     <Compile Include="Assets\scripts\Cards\CardDisplay.cs" />
+    <Compile Include="Assets\scripts\Cards\CriticalStrike.cs" />
     <Compile Include="Assets\scripts\Cards\DodgeRoll.cs" />
     <Compile Include="Assets\scripts\Cards\Effect.cs" />
+    <Compile Include="Assets\scripts\Cards\HeadShot.cs" />
+    <Compile Include="Assets\scripts\Cards\HealingBeam.cs" />
     <Compile Include="Assets\scripts\Cards\OpenFire.cs" />
     <Compile Include="Assets\scripts\Cards\Sidewinder.cs" />
     <Compile Include="Assets\scripts\Cards\Suppression.cs" />
+    <Compile Include="Assets\scripts\Cards\Waduhek.cs" />
     <Compile Include="Assets\scripts\Deal.cs" />
     <Compile Include="Assets\scripts\delegates.cs" />
     <Compile Include="Assets\scripts\Draggable.cs" />
@@ -328,9 +332,12 @@
     <Compile Include="Assets\scripts\GameController.cs" />
     <Compile Include="Assets\scripts\GameInfo.cs" />
     <Compile Include="Assets\scripts\Hand.cs" />
+    <Compile Include="Assets\scripts\MainGameInitializer.cs" />
     <Compile Include="Assets\scripts\Player.cs" />
     <Compile Include="Assets\scripts\quitScene.cs" />
     <Compile Include="Assets\scripts\setParent.cs" />
+    <Compile Include="Assets\Tests\ActivePlayerTests.cs" />
+    <Compile Include="Assets\Tests\BossPlayerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Lobby\Documentation.txt" />

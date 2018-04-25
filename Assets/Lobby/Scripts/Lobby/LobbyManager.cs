@@ -324,10 +324,17 @@ namespace Prototype.NetworkLobby
 
         }
 
+        /****************************************************************************************************/
+
         public override bool OnLobbyServerSceneLoadedForPlayer(GameObject lobbyPlayer, GameObject gamePlayer)
         {
             //This hook allows you to apply state data from the lobby-player to the game-player
             //just subclass "LobbyHook" and add it to the lobby object.
+
+            LobbyPlayer lp = lobbyPlayer.GetComponent<LobbyPlayer>();
+            int my_id = lp.slot;                                                           // get player id [0-4]
+            gamePlayer.gameObject.name = "[" + my_id + "] " + lp.playerName;               // pass id through obj name
+            gamePlayer.GetComponent<Image>().color = lp.playerColor;                       // set image to use for username color
 
             if (_lobbyHooks)
                 _lobbyHooks.OnLobbyServerSceneLoadedForPlayer(this, lobbyPlayer, gamePlayer);

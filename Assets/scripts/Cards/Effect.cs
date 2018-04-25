@@ -26,6 +26,12 @@ public abstract class Effect : MonoBehaviour
         get { return _description; }
     }
 
+    protected enum Rarity {uncommon=1, common=2, rare=3, epic=4, legendary=5 }
+    protected int _rarity;
+    public int getRarity
+    {
+        get { return _rarity; }
+    }
     protected Sprite _artwork;
     public Sprite getArt
     {

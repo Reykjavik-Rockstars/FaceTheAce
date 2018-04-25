@@ -1,15 +1,46 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Networking;
+using System;
 
-public class Player : MonoBehaviour
+public class Player : NetworkBehaviour
 {
+
+    bool flag = true;
+    public int MAX_HEALTH = 50;
+
+    [SyncVar]
     public string Username;
+    [SyncVar]
     public int Health;
     public Hand Hand;
     //on start, player is not dead. Only dead once hp falls to 0 or less
     public bool isDead = false;
 
+    public int player_id = -1;
+
+    void Start()
+    {
+
+    }
+
+    private void Update()
+    {
+        showMessage();
+    }
+
+    void showMessage()
+    {
+        if (flag)
+        {
+            //infoDisplay.GetComponent<Text>().text += "nice";
+            flag = false;
+        }
+    }
+
     public Del_Int OnDamaged;
-    public virtual void ReceiveDamage(int damage, Player source)
+    //[Command]
+    public virtual void CmdReceiveDamage(int damage)
     {
         if (OnDamaged != null) OnDamaged(damage);
 
@@ -23,7 +54,7 @@ public class Player : MonoBehaviour
             else if (Health <= damage)
             {
                 Health = 0;
-                Die();
+                CmdDie();
             }
             //make sure player health is 0 for other conditions. prevent negative health.
             else
@@ -32,7 +63,8 @@ public class Player : MonoBehaviour
     }
 
     public Del_Int OnHealed;
-    public virtual void ReceiveHeal(int heal, Player source)
+    //[Command]
+    public virtual void CmdReceiveHeal(int heal)
     {
         if (OnHealed != null) OnHealed(heal);
         
@@ -51,10 +83,15 @@ public class Player : MonoBehaviour
                 Health = Health + heal;
             }
         }
+        if (Health > MAX_HEALTH)
+        {
+            Health = MAX_HEALTH;
+        }
     }
 
     public Del_Void OnDeath;
-    public virtual void Die()
+    //[Command]
+    public virtual void CmdDie()
     {
         if (OnDeath != null) OnDeath();
         isDead = true;

@@ -4,4 +4,10 @@
     {
         GameInfo.singleton.aceTargetZone = this;
     }
+
+    protected override void Start()
+    {
+        //GameInfo.singleton.aceTargetZone = this;
+    }
+
 }

@@ -73,12 +73,12 @@ GameObject:
   - component: {fileID: 114994828718132688}
   - component: {fileID: 114747127971498482}
   - component: {fileID: 225438961761297104}
-  - component: {fileID: 114461259237118288}
+  - component: {fileID: 114329570340112046}
   - component: {fileID: 114631016650250102}
   - component: {fileID: 114057112001317888}
   m_Layer: 5
   m_Name: OpenFire
-  m_TagString: Untagged
+  m_TagString: card
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,6 +165,17 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: 1
   m_LayoutPriority: 1
+--- !u!114 &114329570340112046
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1766030778272568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da85776af58c9514aa350d450605c98d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114395615184585274
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -192,17 +203,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114461259237118288
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1766030778272568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 32e10ce40c12983459759acd63eb140a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114518124135066090
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c7ca3ad3c09a542a6fc39055f074e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 114461259237118288}
+  effect: {fileID: 114329570340112046}
   nameText: {fileID: 114518124135066090}
   descriptionText: {fileID: 114033555202580462}
   artworkImage: {fileID: 21300000, guid: 335eb2e911852554b8223266684d4eb2, type: 3}

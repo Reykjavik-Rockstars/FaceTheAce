@@ -1,5 +1,4 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class DodgeRoll : Effect
@@ -9,6 +8,7 @@ public class DodgeRoll : Effect
         base.Awake();
         _description = "Negates damage from 1 “Open Fire” or “Sweeping Fire” card targeting target next turn.";
         _name = "Dodge Roll";
+        _rarity = (int)Rarity.rare;
     }
 
     public override void Activate()

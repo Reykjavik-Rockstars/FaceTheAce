@@ -5,12 +5,13 @@
         base.Awake();
         _name = "Sidewinder";
         _description = "Deals 5 damage to target. (uncommon, cannot be negated).";
+        _rarity = (int)Rarity.uncommon;
     }
 
     public override void Activate()
     {
         base.Activate();
-        _targets[0].ReceiveDamage(5, _owner);
+        _targets[0].CmdReceiveDamage(5);
         Inactivate();
     }
 }
