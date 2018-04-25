@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using UnityEditor.UI;
+
 public class TargetingZone : DropZone {
 
     public Player target;
@@ -21,7 +23,9 @@ public class TargetingZone : DropZone {
             CardDisplay card = d.gameObject.GetComponent<CardDisplay>();
             card.effect.SetTarget(target);
             FSM.singleton.nextTurnButton.interactable = true;
-            //this
+            Vector3 newPos = this.gameObject.transform.position;
+            newPos.y += 20.0f;
+            this.gameObject.transform.position = newPos; 
         }
     }
 
@@ -37,6 +41,9 @@ public class TargetingZone : DropZone {
             CardDisplay card = d.gameObject.GetComponent<CardDisplay>();
             GameInfo.singleton.self.Hand.RemoveCard(card);
             GameInfo.singleton.unresolvedCards.Add(card);
+            Vector3 newPos = this.gameObject.transform.position;
+            newPos.y -= 20.0f;
+            this.gameObject.transform.position = newPos;
         }
         else
         {
@@ -52,6 +59,9 @@ public class TargetingZone : DropZone {
             CardDisplay card = d.gameObject.GetComponent<CardDisplay>();
             card.effect.RemoveTarget(target);
             FSM.singleton.nextTurnButton.interactable = false;
+            Vector3 newPos = this.gameObject.transform.position;
+            newPos.y -= 20.0f;
+            this.gameObject.transform.position = newPos;
             if (myCard != null)
             {
                 GameInfo.singleton.unresolvedCards.Remove(myCard.gameObject.GetComponent<CardDisplay>());
