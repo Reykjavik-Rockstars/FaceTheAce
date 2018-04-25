@@ -5,51 +5,82 @@ using System.Collections;
 
 public class BossPlayerTests
 {
-
-    [Test]
-    public void BaseHealthIsNotZeroTest()
+    [TestFixture]
+    public class AttributesTests
     {
-        var player = new GameObject().AddComponent<BossPlayer>();
-        Assert.AreNotEqual(0, player.Health);
+        [Test]
+        public void BaseHealthIsNotZero()
+        {
+            var player = new GameObject().AddComponent<BossPlayer>();
+            Assert.AreNotEqual(0, player.Health);
+        }
+        [Test]
+        public void BaseMaxHealthIsNotZero()
+        {
+            var player = new GameObject().AddComponent<BossPlayer>();
+            Assert.AreNotEqual(0, player.MAX_HEALTH);
+        }
+        [Test]
+        public void ReceiveDamageTest()
+        {
+            var player = new GameObject().AddComponent<BossPlayer>();
+            var healthBefore = player.Health;
+            player.CmdReceiveDamage(1);
+            Assert.AreEqual(healthBefore - 1, player.Health);
+        }
+        [Test]
+        public void ReceiveHealTest()
+        {
+            var player = new GameObject().AddComponent<BossPlayer>();
+            player.CmdReceiveDamage(1);
+            var healthBefore = player.Health;
+            player.CmdReceiveHeal(1);
+            Assert.AreEqual(healthBefore + 1, player.Health);
+        }
+        [Test]
+        public void HealthIsNeverBelowZeroTest()
+        {
+            ReceiveDamageTest();
+
+            var player = new GameObject().AddComponent<BossPlayer>();
+            player.Health = 0;
+            player.CmdReceiveDamage(1);
+            Assert.AreEqual(0, player.Health);
+        }
+        [Test]
+        public void HealthIsNeverAboveMaxTest()
+        {
+            ReceiveHealTest();
+
+            var player = new GameObject().AddComponent<BossPlayer>();
+            player.Health = player.MAX_HEALTH;
+            player.CmdReceiveHeal(1);
+            Assert.AreEqual(player.MAX_HEALTH, player.Health);
+        }
     }
 
-    [Test]
-    public void ReceiveDamageTest()
+    [TestFixture]
+    public class HandTests
     {
-        var player = new GameObject().AddComponent<BossPlayer>();
-        var health = player.Health;
-        player.CmdReceiveDamage(1);
-        Assert.AreEqual(health - 1, player.Health);
+        [Test]
+        public void BaseHeldCardsIsZero()
+        {
+            var player = new GameObject().AddComponent<BossPlayer>();
+            Assert.AreEqual(0, player.Hand.GetHandCardsCount());
+        }
+        [Test]
+        public void AddCardToHandTest()
+        {
+            var hand = new GameObject().AddComponent<BossPlayer>().Hand;
+            var cardCountBefore = hand.GetHandCardsCount();
+            hand.AddCard(new CardDisplay());
+            Assert.AreEqual(cardCountBefore + 1, hand.GetHandCardsCount());
+        }
+        [Test]
+        public void HeldCardsNeverAboveMaxTest()
+        {
+            var hand = new GameObject().AddComponent<BossPlayer>().Hand;
+            Assert.AreEqual(0, hand.GetHandCardsCount());
+        }
     }
-
-    [Test]
-    public void ReceiveHealTest()
-    {
-        var player = new GameObject().AddComponent<BossPlayer>();
-        player.CmdReceiveDamage(1);
-        var health = player.Health;
-        player.CmdReceiveDamage(1);
-        Assert.AreEqual(health + 1, player.Health);
-    }
-
-    [Test]
-    public void HealthIsNeverBelowZeroTest()
-    {
-        var player = new GameObject().AddComponent<BossPlayer>();
-        player.Health = 0;
-        while (true) player.Health = 0;
-
-        player.CmdReceiveDamage(1);
-        Assert.AreEqual(0, player.Health);
-    }
-
-    [Test]
-    public void HealthIsNeverAboveMax()
-    {
-        var player = new GameObject().AddComponent<BossPlayer>();
-        player.Health = player.MAX_HEALTH;
-        player.CmdReceiveHeal(1);
-        Assert.AreEqual(BossPlayer.BASE_HEALTH, player.Health);
-    }
-
 }
