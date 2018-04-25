@@ -13,6 +13,7 @@ public class ActivePlayer : Player
 
     void Awake()
     {
+        MAX_HEALTH = 50;
         Health = BASE_HEALTH;
         Hand = new Hand(MAX_HAND_CARD_COUNT);
     }
