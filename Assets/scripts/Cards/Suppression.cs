@@ -72,7 +72,7 @@
             if (card.GetEffect().Targets[0] == _targets[0])
             {
                 if (Countdown())
-                    _targets[0].ReceiveDamage(2, _owner);
+                    _targets[0].CmdReceiveDamage(2);
             }
         }
     }
