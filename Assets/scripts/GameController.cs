@@ -78,7 +78,7 @@ public class GameController : MonoBehaviour
         {
             case FSM.gameState.Draw:
                 instructionsText.text = "Instructions:\n"
-                    + "Draw 3 cards and click End Turn.";
+                    + "Click the lower-right deck until you have 3 cards. Then click End Turn.";
                 break;
             case FSM.gameState.Select:
                 instructionsText.text = "Instructions:\n"

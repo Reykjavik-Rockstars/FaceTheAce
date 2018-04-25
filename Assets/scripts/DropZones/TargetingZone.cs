@@ -21,6 +21,7 @@ public class TargetingZone : DropZone {
             CardDisplay card = d.gameObject.GetComponent<CardDisplay>();
             card.effect.SetTarget(target);
             FSM.singleton.nextTurnButton.interactable = true;
+            //this
         }
     }
 
