@@ -5,8 +5,9 @@ using System;
 
 public class Player : NetworkBehaviour
 {
-    bool flag = true;
 
+    bool flag = true;
+    public int MAX_HEALTH;
     public string Username;
     public int Health;
     public Hand Hand;
@@ -42,7 +43,7 @@ public class Player : NetworkBehaviour
         if(!isDead)
         {
             //if damage is less than player health, deal normal damage
-            if (Health > 0 && Health > damage)
+            if (Health > 0 && Health >= damage)
                 Health = Health - damage;
             //if health is less than or equal to damage, health goes to 0 and player dies
             else if (Health <= damage)
@@ -75,6 +76,10 @@ public class Player : NetworkBehaviour
                 Health = 0;
                 Health = Health + heal;
             }
+        }
+        if (Health > MAX_HEALTH)
+        {
+            Health = MAX_HEALTH;
         }
     }
 

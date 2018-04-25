@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 114742752773844384}
   - component: {fileID: 114340574791906298}
   - component: {fileID: 225055022044609784}
-  - component: {fileID: 114728127628471560}
+  - component: {fileID: 114995565848295564}
   - component: {fileID: 114549440425104632}
   - component: {fileID: 114971079302410426}
   m_Layer: 5
@@ -206,21 +206,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c7ca3ad3c09a542a6fc39055f074e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 114728127628471560}
+  effect: {fileID: 114995565848295564}
   nameText: {fileID: 114338251031482858}
   descriptionText: {fileID: 114061474272563580}
   artworkImage: {fileID: 0}
---- !u!114 &114728127628471560
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1386044479465388}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7bd09a41565e8a41af73619a7386bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114742752773844384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -294,6 +283,17 @@ MonoBehaviour:
   m_FlexibleWidth: 1
   m_FlexibleHeight: 1
   m_LayoutPriority: 1
+--- !u!114 &114995565848295564
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1386044479465388}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab9bf0d3460062f43b2a070f7eec6471, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212892008619477550
 SpriteRenderer:
   m_ObjectHideFlags: 1

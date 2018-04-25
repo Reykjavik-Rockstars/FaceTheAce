@@ -72,12 +72,11 @@ GameObject:
   - component: {fileID: 224705286373673660}
   - component: {fileID: 222765482937891542}
   - component: {fileID: 114148749843317518}
+  - component: {fileID: 114395342392892104}
   - component: {fileID: 114633718117500184}
   - component: {fileID: 225867330682498180}
-  - component: {fileID: 114106163740543296}
   - component: {fileID: 114341062525199488}
   - component: {fileID: 114275584585743334}
-  - component: {fileID: 114029660558718558}
   m_Layer: 5
   m_Name: DodgeRoll
   m_TagString: card
@@ -114,28 +113,6 @@ Transform:
   m_Father: {fileID: 224913474671654940}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114029660558718558
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1779682426856322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac00e5ec303323e458b0ea55b3b6d26b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114106163740543296
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1779682426856322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a30110826e6419b47964fb82e5a817b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114148749843317518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,10 +203,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90c7ca3ad3c09a542a6fc39055f074e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: {fileID: 114029660558718558}
+  effect: {fileID: 114395342392892104}
   nameText: {fileID: 114413986665187640}
   descriptionText: {fileID: 114159705860956462}
   artworkImage: {fileID: 21300000, guid: 06294547126aee748870f32f880d45b7, type: 3}
+--- !u!114 &114395342392892104
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1779682426856322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e827f1cf86d388e43becec59745caee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114413986665187640
 MonoBehaviour:
   m_ObjectHideFlags: 1

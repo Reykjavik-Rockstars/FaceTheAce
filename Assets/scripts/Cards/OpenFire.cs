@@ -5,6 +5,7 @@
         base.Awake();
         _name = "Open Fire";
         _description = "Deals 5 damage to target.";
+        _rarity = (int)Rarity.common;
     }
 
     public override void Activate()
