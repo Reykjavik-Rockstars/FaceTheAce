@@ -28,7 +28,7 @@ public class ActivePlayer : Player
 
         // Set color of username ui
         player_username_display = GameObject.Find(display_ui_name);
-        player_username_display.GetComponent<Text>().color = this.GetComponent<Image>().color;// pull color from Pilot <Image>
+        ///player_username_display.GetComponent<Text>().color = this.GetComponent<Image>().color;// pull color from Pilot <Image>
         Color c = this.GetComponent<Image>().color;
 
         // Make Pilot Image transparent, only needed the color

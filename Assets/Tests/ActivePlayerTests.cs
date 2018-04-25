@@ -17,27 +17,9 @@ public class ActivePlayerTests
     public void ReceiveDamageTest()
     {
         var player = new GameObject().AddComponent<ActivePlayer>();
-        var attackingPlayer = new GameObject().AddComponent<ActivePlayer>();
-
         var health = player.Health;
         player.CmdReceiveDamage(1);
         Assert.AreEqual(health - 1, player.Health);
-    }
-
-    [Test]
-    public void HealthIsNeverBelowZeroTest()
-    {
-        var player = new GameObject().AddComponent<ActivePlayer>();
-        var attackingPlayer = new GameObject().AddComponent<ActivePlayer>();
-
-        while (player.Health > 0)
-        {
-            player.CmdReceiveDamage(1);
-        }
-
-        player.CmdReceiveDamage(1);
-
-        Assert.AreEqual(0, player.Health);
     }
 
     [Test]
@@ -49,19 +31,21 @@ public class ActivePlayerTests
         player.CmdReceiveDamage(1);
         Assert.AreEqual(health + 1, player.Health);
     }
+    [Test]
+    public void HealthIsNeverBelowZeroTest()
+    {
+        var player = new GameObject().AddComponent<ActivePlayer>();
+        player.Health = 0;        
+        player.CmdReceiveDamage(1);
+        Assert.AreEqual(0, player.Health);
+    }
 
     [Test]
     public void HealthIsNeverAboveMax()
     {
         var player = new GameObject().AddComponent<ActivePlayer>();
-
-        while (player.Health < ActivePlayer.BASE_HEALTH)
-        {
-            player.CmdReceiveHeal(1);
-        }
+        player.Health = player.MAX_HEALTH;
         player.CmdReceiveHeal(1);
-
         Assert.AreEqual(ActivePlayer.BASE_HEALTH, player.Health);
     }
-
 }
