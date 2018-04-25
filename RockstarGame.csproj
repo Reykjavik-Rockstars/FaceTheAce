@@ -336,7 +336,7 @@
     <Compile Include="Assets\scripts\quitScene.cs" />
     <Compile Include="Assets\scripts\setParent.cs" />
     <Compile Include="Assets\Tests\ActivePlayerTests.cs" />
-    <Compile Include="Assets\Tests\NewPlayModeTest1.cs" />
+    <Compile Include="Assets\Tests\BossPlayerTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Lobby\Documentation.txt" />
